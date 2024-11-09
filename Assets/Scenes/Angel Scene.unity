@@ -122,27 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &313657438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5232656313128310149, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
-  m_PrefabInstance: {fileID: 1071086453341009111}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &313657447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313657438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1993c0162d29e81468a0bd82f9b418cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  gravityValue: -9.81
-  jumpHeight: 1
-  rotationSpeed: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,17 +272,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paula
       objectReference: {fileID: 0}
+    - target: {fileID: 5232656313128310149, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9079910723943502943, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
       propertyPath: m_Actions
       value: 
       objectReference: {fileID: -944628639613478452, guid: 7543a3f39267ac8429e9b32726806b49, type: 3}
     - target: {fileID: 9079910723943502943, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
       propertyPath: m_DefaultActionMap
-      value: Player 2
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9079910723943502943, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: WASD
+      value: Joystick
       objectReference: {fileID: 0}
     - target: {fileID: 9079910723943502943, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
       propertyPath: m_NotificationBehavior
@@ -366,35 +349,11 @@ PrefabInstance:
       value: PaulaPlayerScript, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 9209799846163059209, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5232656313128310149, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1114368388}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
---- !u!1 &1114368371 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5232656313128310149, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
-  m_PrefabInstance: {fileID: 748252635}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1114368388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114368371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1993c0162d29e81468a0bd82f9b418cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  gravityValue: -9.81
-  jumpHeight: 1
-  rotationSpeed: 1
 --- !u!1 &1532872371
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,8 +621,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 0
   m_MaxPlayerCount: 2
-  m_AllowJoining: 1
-  m_JoinBehavior: 2
+  m_AllowJoining: 0
+  m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -683,7 +642,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_PlayerPrefab: {fileID: 5232656313128310149, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
-  m_SplitScreen: 0
+  m_SplitScreen: 1
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
   m_SplitScreenRect:
@@ -759,6 +718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wayne
       objectReference: {fileID: 0}
+    - target: {fileID: 5232656313128310149, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6379644145933991038, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
       value: 0
@@ -769,7 +732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9079910723943502943, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Arrow Keys
+      value: Keyboard&Mouse
       objectReference: {fileID: 0}
     - target: {fileID: 9079910723943502943, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
       propertyPath: m_NotificationBehavior
@@ -792,13 +755,10 @@ PrefabInstance:
       value: WaynePlayerScript, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 9209799846163059209, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5232656313128310149, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 313657447}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c9e1dcf392ba2d429a309c7b3f93b3c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

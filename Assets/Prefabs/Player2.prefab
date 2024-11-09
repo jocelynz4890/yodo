@@ -103,11 +103,10 @@ GameObject:
   - component: {fileID: 3093368342395976466}
   - component: {fileID: 8164307987595060465}
   - component: {fileID: 4524983886458641897}
-  - component: {fileID: 6087377199642155101}
   - component: {fileID: 8041049885523525834}
   - component: {fileID: 9079910723943502943}
-  - component: {fileID: 9209799846163059209}
   - component: {fileID: 8503996926753992149}
+  - component: {fileID: -3307278768934978575}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -181,29 +180,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6087377199642155101
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232656313128310149}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &8041049885523525834
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -254,7 +230,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9209799846163059209}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -318,7 +294,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9209799846163059209}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -352,23 +328,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &9209799846163059209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232656313128310149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ae540de178c304f984749fcaef0adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  gravityValue: -9.81
-  jumpHeight: 1
-  rotationSpeed: 1
+  m_Camera: {fileID: 6379644145933991038}
 --- !u!143 &8503996926753992149
 CharacterController:
   m_ObjectHideFlags: 0
@@ -395,3 +355,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3307278768934978575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232656313128310149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1993c0162d29e81468a0bd82f9b418cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  gravityValue: -9.81
+  jumpHeight: 1
+  rotationSpeed: 1
