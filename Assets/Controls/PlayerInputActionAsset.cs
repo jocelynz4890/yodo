@@ -251,7 +251,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""3e5f5442-8668-4b27-a940-df99bad7e831"",
-                    ""path"": ""<Joystick>/{Hatswitch}"",
+                    ""path"": ""<HID::BDA NSW wired controller>/hat"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
@@ -295,7 +295,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
-                    ""path"": ""<Joystick>/trigger"",
+                    ""path"": ""<HID::BDA NSW wired controller>/button8"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",

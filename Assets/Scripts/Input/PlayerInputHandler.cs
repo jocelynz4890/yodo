@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool fire = false;
+
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float jumpHeight = 1.0f;
@@ -79,6 +81,9 @@ public class PlayerController : MonoBehaviour
                 {
                     playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
                 }
+                break;
+            case "Fire":
+                fire = context.performed;
                 break;
             default:
                 Debug.Log("Unknown action: " + context.action.name);
