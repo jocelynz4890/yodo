@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Jocelyn Scene.unity
+    guid: 56e021b1944df134cb1a3d6b1dcb9fb7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 7543a3f39267ac8429e9b32726806b49, type: 3}
