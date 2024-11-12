@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
                 fire = context.performed;
                 break;
             default:
-                Debug.Log("Unknown action: " + context.action.name);
+                // Debug.Log("Unknown action: " + context.action.name);
                 break;
         }
     }
