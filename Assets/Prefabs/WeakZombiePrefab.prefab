@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1630680616910631844}
   - component: {fileID: 1442981387291173340}
   - component: {fileID: -4649374753598293428}
+  - component: {fileID: 2043405352800943622}
   m_Layer: 0
   m_Name: WeakZombiePrefab
   m_TagString: Untagged
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,3 +119,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff539ce2765531c42a6880fdf22c40dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  P1Object: {fileID: 0}
+  P2Object: {fileID: 0}
+  P1offset: {x: 0, y: 0, z: 0}
+  P2offset: {x: 0, y: 0, z: 0}
+  smoothSpeed: 1
+--- !u!114 &2043405352800943622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4384626086245211406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0aca3a2f6e656c479f9e678e677cdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 3

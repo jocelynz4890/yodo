@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SimplePathfinding : MonoBehaviour
 {
+
     [SerializeField] public GameObject P1Object;  // Reference to the objects to follow
     [SerializeField] public GameObject P2Object;
     private bool P1Closer = true;
@@ -9,6 +10,12 @@ public class SimplePathfinding : MonoBehaviour
     [SerializeField] private Vector3 P2offset;
     [SerializeField] private float smoothSpeed = 5f;  // Speed of movement (higher = faster)
 
+
+    void Start()
+    {
+        P1Object = GameObject.FindGameObjectWithTag("Player").transform.Find("Player 1").gameObject;
+        P2Object = GameObject.FindGameObjectWithTag("Player").transform.Find("Player 2").gameObject;
+    }
     private void FixedUpdate()
     {
         Vector3 currentPos = this.transform.position;
