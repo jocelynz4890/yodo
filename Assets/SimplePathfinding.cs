@@ -9,7 +9,9 @@ public class SimplePathfinding : MonoBehaviour
     [SerializeField] private Vector3 P1offset;          // Offset from target position
     [SerializeField] private Vector3 P2offset;
     [SerializeField] private float smoothSpeed = 5f;  // Speed of movement (higher = faster)
-
+    private float attackRange = 1f;
+    private float attackCooldown = 2f;
+    private float nextAttackTime = 0;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class SimplePathfinding : MonoBehaviour
         Vector3 P2Pos = P2Object.transform.position + P2offset;
         float P1Distance = (currentPos - P1Pos).magnitude;
         float P2Distance = (currentPos - P2Pos).magnitude;
-        if (P1Distance >= P2Distance)
+        if (P1Object.GetComponent<Health>().currentHealth <= 0 || (P2Object.GetComponent<Health>().currentHealth > 0 && P2Distance <= P1Distance))
         {
             P1Closer = false;
         }
@@ -42,5 +44,17 @@ public class SimplePathfinding : MonoBehaviour
 
         // Smoothly move to target position
         this.transform.position = Vector3.Lerp(currentPos, desiredPosition, smoothSpeed * Time.deltaTime);
+
+        // Attack players when close
+        if (P1Distance <= attackRange && Time.time > nextAttackTime)
+        {
+            P1Object.GetComponent<Health>().Damage(1);
+            nextAttackTime = Time.time + attackCooldown;
+        }
+        if (P2Distance <= attackRange && Time.time > nextAttackTime)
+        {
+            P2Object.GetComponent<Health>().Damage(1);
+            nextAttackTime = Time.time + attackCooldown;
+        }
     }
 }
