@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1630680616910631844}
   - component: {fileID: 1442981387291173340}
   - component: {fileID: -4649374753598293428}
-  - component: {fileID: 2043405352800943622}
+  - component: {fileID: -6350301463241097272}
   m_Layer: 0
   m_Name: WeakZombiePrefab
   m_TagString: Untagged
@@ -124,7 +124,7 @@ MonoBehaviour:
   P1offset: {x: 0, y: 0, z: 0}
   P2offset: {x: 0, y: 0, z: 0}
   smoothSpeed: 1
---- !u!114 &2043405352800943622
+--- !u!114 &-6350301463241097272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
