@@ -16,7 +16,7 @@ public class SimplePathfinding : MonoBehaviour
     {
         try
         {
-            P1Object = GameObject.FindGameObjectWithTag("Player").transform.Find("Player 1").gameObject;
+            P1Object = GameObject.Find("Players").transform.Find("Player 1").gameObject;
         }
         catch (System.Exception e)
         {
