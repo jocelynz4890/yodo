@@ -18,17 +18,21 @@ public class SimplePathfinding : MonoBehaviour
         {
             P1Object = GameObject.FindGameObjectWithTag("Player").transform.Find("Player 1").gameObject;
         }
-        catch
+        catch (System.Exception e)
         {
-            Debug.LogWarning("P1 Not Found, Cannot Pathfind.");
+            Debug.LogWarning($"P1 Not Found, Cannot Pathfind. Error: {e.Message}");
+            // or for more details including the stack trace:
+            // Debug.LogWarning($"P1 Not Found, Cannot Pathfind. Error: {e}");
         }
         try
         {
             P2Object = GameObject.FindGameObjectWithTag("Player").transform.Find("Player 2").gameObject;
         }
-        catch
+        catch (System.Exception e)
         {
-            Debug.LogWarning("P2 Not Found, Cannot Pathfind.");
+            Debug.LogWarning($"P1 Not Found, Cannot Pathfind. Error: {e.Message}");
+            // or for more details including the stack trace:
+            // Debug.LogWarning($"P1 Not Found, Cannot Pathfind. Error: {e}");
         }
     }
 
