@@ -62,12 +62,16 @@ public class RaycastShootComplete : MonoBehaviour {
 
                 // Get a reference to a health script attached to the collider we hit
                 Health health = hit.collider.GetComponent<Health>();
-
-                // If there was a health script attached
+                // If there's no health script attached, check parent
+                if (health == null)
+                {
+                    health = hit.collider.GetComponentInParent<Health>();
+                }
+                // If there was a health script attached (either directly or on parent)
                 if (health != null)
                 {
                     // Call the damage function of that script, passing in our gunDamage variable
-                    health.Damage (gunDamage);
+                    health.Damage(gunDamage);
                 }
 
                 // Check if the object we hit has a rigidbody attached

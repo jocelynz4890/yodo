@@ -2,59 +2,108 @@ using UnityEngine;
 
 public class SimplePathfinding : MonoBehaviour
 {
-
-    [SerializeField] public GameObject P1Object;  // Reference to the objects to follow
+    [SerializeField] public GameObject P1Object;
     [SerializeField] public GameObject P2Object;
     private bool P1Closer = true;
-    [SerializeField] private Vector3 P1offset;          // Offset from target position
+    [SerializeField] private Vector3 P1offset;
     [SerializeField] private Vector3 P2offset;
-    [SerializeField] private float smoothSpeed = 5f;  // Speed of movement (higher = faster)
+    [SerializeField] private float smoothSpeed = 5f;
     private float attackRange = 1f;
     private float attackCooldown = 2f;
     private float nextAttackTime = 0;
 
     void Start()
     {
-        P1Object = GameObject.FindGameObjectWithTag("Player").transform.Find("Player 1").gameObject;
-        P2Object = GameObject.FindGameObjectWithTag("Player").transform.Find("Player 2").gameObject;
+        try
+        {
+            P1Object = GameObject.FindGameObjectWithTag("Player").transform.Find("Player 1").gameObject;
+        }
+        catch
+        {
+            Debug.LogWarning("P1 Not Found, Cannot Pathfind.");
+        }
+        try
+        {
+            P2Object = GameObject.FindGameObjectWithTag("Player").transform.Find("Player 2").gameObject;
+        }
+        catch
+        {
+            Debug.LogWarning("P2 Not Found, Cannot Pathfind.");
+        }
     }
+
     private void FixedUpdate()
     {
-        Vector3 currentPos = this.transform.position;
-        Vector3 P1Pos = P1Object.transform.position + P1offset;
-        Vector3 P2Pos = P2Object.transform.position + P2offset;
-        float P1Distance = (currentPos - P1Pos).magnitude;
-        float P2Distance = (currentPos - P2Pos).magnitude;
-        if (P1Object.GetComponent<Health>().currentHealth <= 0 || (P2Object.GetComponent<Health>().currentHealth > 0 && P2Distance <= P1Distance))
+        Vector3 currentPos = transform.position;
+        Vector3 desiredPosition = currentPos;
+        float P1Distance = 1000f;
+        float P2Distance = 1000f;
+
+        // Calculate positions and distances if players exist
+        Vector3? P1Pos = P1Object ? (Vector3?)(P1Object.transform.position + P1offset) : null;
+        Vector3? P2Pos = P2Object ? (Vector3?)(P2Object.transform.position + P2offset) : null;
+
+        if (P1Pos.HasValue)
         {
-            P1Closer = false;
+            P1Distance = (currentPos - P1Pos.Value).magnitude;
+        }
+        if (P2Pos.HasValue)
+        {
+            P2Distance = (currentPos - P2Pos.Value).magnitude;
+        }
+
+        // Determine target position
+        if (P1Object && P2Object)
+        {
+            var P1Health = P1Object.GetComponent<Health>();
+            var P2Health = P2Object.GetComponent<Health>();
+
+            if (P1Health && P2Health)
+            {
+                P1Closer = !(P1Health.currentHealth <= 0 ||
+                            (P2Health.currentHealth > 0 && P2Distance <= P1Distance));
+            }
+
+            desiredPosition = P1Closer ? P1Pos.Value : P2Pos.Value;
+        }
+        else if (P1Object && P1Pos.HasValue)
+        {
+            desiredPosition = P1Pos.Value;
+        }
+        else if (P2Object && P2Pos.HasValue)
+        {
+            desiredPosition = P2Pos.Value;
         }
         else
         {
-            P1Closer = true;
+            Debug.Log("No Players Exist, cannot pathfind.");
+            return;
         }
-        float newX = P1Closer ? P1Pos.x : P2Pos.x;
-        float newY = P1Closer ? P1Pos.y : P2Pos.y;
-        float newZ = P1Closer ? P1Pos.z : P2Pos.z;
 
-        // Only follow on specified axes
+        // Move towards target
+        transform.position = Vector3.Lerp(currentPos, desiredPosition, smoothSpeed * Time.deltaTime);
 
-
-        Vector3 desiredPosition = new Vector3(newX, newY, newZ);
-
-        // Smoothly move to target position
-        this.transform.position = Vector3.Lerp(currentPos, desiredPosition, smoothSpeed * Time.deltaTime);
-
-        // Attack players when close
-        if (P1Distance <= attackRange && Time.time > nextAttackTime)
+        // Attack logic with null checks
+        if (Time.time > nextAttackTime)
         {
-            P1Object.GetComponent<Health>().Damage(1);
-            nextAttackTime = Time.time + attackCooldown;
-        }
-        if (P2Distance <= attackRange && Time.time > nextAttackTime)
-        {
-            P2Object.GetComponent<Health>().Damage(1);
-            nextAttackTime = Time.time + attackCooldown;
+            if (P1Object && P1Distance <= attackRange)
+            {
+                var health = P1Object.GetComponent<Health>();
+                if (health != null)
+                {
+                    health.Damage(1);
+                    nextAttackTime = Time.time + attackCooldown;
+                }
+            }
+            if (P2Object && P2Distance <= attackRange)
+            {
+                var health = P2Object.GetComponent<Health>();
+                if (health != null)
+                {
+                    health.Damage(1);
+                    nextAttackTime = Time.time + attackCooldown;
+                }
+            }
         }
     }
 }
