@@ -185,6 +185,7 @@ MonoBehaviour:
   P1offset: {x: 0, y: 0, z: 0}
   P2offset: {x: 0, y: 0, z: 0}
   smoothSpeed: 1
+  animator: {fileID: 8389187686745584526}
 --- !u!1 &7086039492455015166 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8121686736740376697, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
@@ -212,6 +213,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!95 &8389187686745584526 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  m_PrefabInstance: {fileID: 1360276553577185927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9134298059913831623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7792115628037826112, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
