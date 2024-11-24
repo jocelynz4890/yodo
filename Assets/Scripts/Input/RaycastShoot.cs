@@ -4,7 +4,7 @@ using System.Collections;
 public class RaycastShootComplete : MonoBehaviour {
 
     public int gunDamage = 1;                                            // Set the number of hitpoints that this gun will take away from shot objects with a health script
-    public float fireRate = 0.25f;                                        // Number in seconds which controls how often the player can fire
+    public float fireRate = 0.20f;                                        // Number in seconds which controls how often the player can fire
     public float weaponRange = 50f;                                        // Distance in Unity units over which the player can fire
     public float hitForce = 100f;                                        // Amount of force which will be added to objects with a rigidbody shot by the player
     public Transform gunEnd;                                            // Holds a reference to the gun end object, marking the muzzle location of the gun
@@ -52,11 +52,9 @@ public class RaycastShootComplete : MonoBehaviour {
             // Set the start position for our visual effect for our laser to the position of gunEnd
             laserLine.SetPosition (0, gunEnd.position);
 
-            Debug.Log("fired");
             // Check if our raycast has hit anything
             if (Physics.Raycast (rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
             {
-                Debug.Log("hit");
                 // Set the end position for our laser line 
                 laserLine.SetPosition (1, hit.point);
 
@@ -68,7 +66,7 @@ public class RaycastShootComplete : MonoBehaviour {
                     health = hit.collider.GetComponentInParent<Health>();
                 }
                 // If there was a health script attached (either directly or on parent)
-                if (health != null)
+                if (health != null && !hit.collider.GetComponentInParent<PlayerController>())
                 {
                     // Call the damage function of that script, passing in our gunDamage variable
                     health.Damage(gunDamage);
@@ -86,11 +84,6 @@ public class RaycastShootComplete : MonoBehaviour {
                 // If we did not hit anything, set the end of the line to a position directly in front of the camera at the distance of weaponRange
                 laserLine.SetPosition (1, rayOrigin + (fpsCam.transform.forward * weaponRange));
             }
-        }
-
-        if (playerInput.fire)
-        {
-            playerInput.fire = false;
         }
     }
 

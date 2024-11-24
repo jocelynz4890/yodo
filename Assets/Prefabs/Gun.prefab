@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunDamage: 1
-  fireRate: 0.25
+  fireRate: 0.2
   weaponRange: 50
   hitForce: 100
   gunEnd: {fileID: 6587253919675593469}
