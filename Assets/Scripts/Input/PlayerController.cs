@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public bool fire = false;
+    public bool isInteract = false;
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityValue = -9.81f;
@@ -84,6 +85,9 @@ public class PlayerController : MonoBehaviour
                 break;
             case "Fire":
                 fire = context.performed;
+                break;
+            case "Interact":
+                isInteract = context.performed;
                 break;
             default:
                 // Debug.Log("Unknown action: " + context.action.name);

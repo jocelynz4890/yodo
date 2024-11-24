@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 8503996926753992149}
   - component: {fileID: -3307278768934978575}
   - component: {fileID: 2029757524618260487}
+  - component: {fileID: -7787930911982333758}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -676,6 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: 0
+  isInteract: 0
   moveSpeed: 10
   gravityValue: -9.81
   jumpHeight: 1
@@ -695,9 +697,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
-  healthBar: {fileID: 6208473111908215028}
-  deathText: {fileID: 585900971801707307}
-  healthText: {fileID: 7834893145661837573}
+--- !u!114 &-7787930911982333758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232656313128310149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025fe1b43220548498d68f89f981bafc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reviveDuration: 5
+  reviveRange: 5
+  otherPlayer: {fileID: 0}
 --- !u!1 &5796989009505575421
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,12 +858,12 @@ GameObject:
   - component: {fileID: 1672770442124783759}
   - component: {fileID: 585900971801707307}
   m_Layer: 5
-  m_Name: DeathText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4615661889869557748
 RectTransform:
   m_ObjectHideFlags: 0
@@ -897,7 +911,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Died!
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

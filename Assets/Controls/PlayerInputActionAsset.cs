@@ -80,6 +80,15 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""8acec14c-3f13-41e9-bd3d-c9be889d5c87"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -388,6 +397,28 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": "";Arrow Keys"",
                     ""action"": ""LookRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7e2060d-7800-4179-ae98-6781b7f9673d"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccffd407-d1af-40be-8c8d-604e747b59b7"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1003,6 +1034,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_LookLeft = m_Player.FindAction("LookLeft", throwIfNotFound: true);
         m_Player_LookRight = m_Player.FindAction("LookRight", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1088,6 +1120,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_LookLeft;
     private readonly InputAction m_Player_LookRight;
+    private readonly InputAction m_Player_Interact;
     public struct PlayerActions
     {
         private @PlayerInputActionAsset m_Wrapper;
@@ -1098,6 +1131,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @LookLeft => m_Wrapper.m_Player_LookLeft;
         public InputAction @LookRight => m_Wrapper.m_Player_LookRight;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1125,6 +1159,9 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
             @LookRight.started += instance.OnLookRight;
             @LookRight.performed += instance.OnLookRight;
             @LookRight.canceled += instance.OnLookRight;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1147,6 +1184,9 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
             @LookRight.started -= instance.OnLookRight;
             @LookRight.performed -= instance.OnLookRight;
             @LookRight.canceled -= instance.OnLookRight;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1353,6 +1393,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
         void OnJump(InputAction.CallbackContext context);
         void OnLookLeft(InputAction.CallbackContext context);
         void OnLookRight(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

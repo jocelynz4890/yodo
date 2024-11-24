@@ -16,7 +16,6 @@ public class RaycastShootComplete : MonoBehaviour {
     private float nextFire;                                                // Float to store the time the player will be allowed to fire again, after firing
     private PlayerController playerInput;
 
-
     void Start () 
     {
         // Get and store a reference to our LineRenderer component
@@ -66,7 +65,8 @@ public class RaycastShootComplete : MonoBehaviour {
                     health = hit.collider.GetComponentInParent<Health>();
                 }
                 // If there was a health script attached (either directly or on parent)
-                if (health != null && !hit.collider.GetComponentInParent<PlayerController>())
+                // !hit.collider.GetComponentInParent<PlayerController>()
+                if (health != null)
                 {
                     // Call the damage function of that script, passing in our gunDamage variable
                     health.Damage(gunDamage);
