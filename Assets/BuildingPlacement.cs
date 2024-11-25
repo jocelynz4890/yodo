@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class BuildingPlacement : MonoBehaviour
 {
+
     [System.Serializable]
     public class BuildingObject
     {
@@ -17,62 +18,62 @@ public class BuildingPlacement : MonoBehaviour
     [Header("Building Prefabs")]
     [SerializeField] private List<BuildingObject> availableBuildings = new List<BuildingObject>();
     [SerializeField] private int selectedBuildingIndex = 0;
-    
+
     [Header("Requirements")]
     [SerializeField] private bool hasToolbox = false;
     [SerializeField] private bool hasMaterials = false;
     
     [Header("Placement Settings")]
     [SerializeField] private bool showPlacementPreview = true;
-    [SerializeField] private float previewUpdateInterval = 0.05f; // Update preview every 50ms
-    
-    private Camera mainCamera;
-    private InputAction fireAction;
+    [SerializeField] private Material previewMaterial;
+    //Preview Settings
     private GameObject previewObject;
     private const string PLACEABLE_TAG = "PlacableTerrain";
-    private float lastPreviewUpdate;
-    
+
+    [Header("Player Settings")]
+    [SerializeField] private PlayerInput playerInput;  // Reference to Unity's PlayerInput component
+    [SerializeField] private string placeBuildingActionName = "Fire";   // Name of the action in your Input Action Asset
+    private Camera playerCamera;  // Camera specific to this player
+
     private void Awake()
     {
-        mainCamera = Camera.main;
+        // Get the camera assigned to this player (you'll need to set this up in your scene)
+        playerCamera = GetComponentInChildren<Camera>();
+        if (playerCamera == null)
+            playerCamera = Camera.main;  // Fallback to main camera if no specific camera is found
+
         SetupInputActions();
     }
-    
+
     private void SetupInputActions()
     {
-        fireAction = new InputAction("Fire", InputActionType.Button);
-        fireAction.AddBinding("<Mouse>/leftButton");
-        fireAction.performed += OnFirePerformed;
-        fireAction.Enable();
+        // Assuming you're using the new Input System with PlayerInput component
+        if (playerInput == null)
+            playerInput = GetComponent<PlayerInput>();
+
+        // Subscribe to the place building action
+        playerInput.actions[placeBuildingActionName].performed += OnFirePerformed;
     }
-    
+
     private void OnDestroy()
     {
-        if (fireAction != null)
+        if (playerInput != null)
         {
-            fireAction.performed -= OnFirePerformed;
-            fireAction.Disable();
-            fireAction.Dispose();
+            playerInput.actions[placeBuildingActionName].performed -= OnFirePerformed;
         }
-        
         if (previewObject != null)
         {
             Destroy(previewObject);
         }
     }
     
-    private void Update()
+private void Update()
+{
+    if (showPlacementPreview && CanPlace())
     {
-        if (showPlacementPreview && CanPlace())
-        {
-            // Only update preview at fixed intervals
-            if (Time.time - lastPreviewUpdate >= previewUpdateInterval)
-            {
-                UpdateBuildingPreview();
-                lastPreviewUpdate = Time.time;
-            }
-        }
+        UpdateBuildingPreview();
     }
+}
     
     private void UpdateBuildingPreview()
     {
@@ -98,25 +99,19 @@ public class BuildingPlacement : MonoBehaviour
             }
         }
     }
-    
+
     private void SetPreviewMaterial(GameObject preview)
     {
         var renderers = preview.GetComponentsInChildren<Renderer>();
         foreach (var renderer in renderers)
         {
-            Material[] materials = renderer.materials;
-            for (int i = 0; i < materials.Length; i++)
-            {
-                Material previewMaterial = new Material(materials[i]);
-                previewMaterial.color = new Color(
-                    previewMaterial.color.r,
-                    previewMaterial.color.g,
-                    previewMaterial.color.b,
-                    0.5f
-                );
-                materials[i] = previewMaterial;
-            }
-            renderer.materials = materials;
+            renderer.material = previewMaterial;
+        }
+
+        var colliders = preview.GetComponentsInChildren<Collider>();
+        foreach (var collider in colliders)
+        {
+            collider.enabled = false;
         }
     }
 
@@ -149,52 +144,67 @@ public class BuildingPlacement : MonoBehaviour
         }
         return null;
     }
-    
+
+    private RaycastHit[] hits = new RaycastHit[8]; // Cache this array as a field to avoid allocation
+
     private bool GetPlacementPosition(out Vector3 position, out Quaternion rotation)
     {
         position = Vector3.zero;
         rotation = Quaternion.identity;
-        
+
         BuildingObject selectedBuilding = GetSelectedBuilding();
         if (selectedBuilding == null) return false;
 
-        // Calculate forward position from player, ignoring vertical component
-        Vector3 forward = mainCamera.transform.forward;
-        forward.y = 0;
-        forward.Normalize();
-        
-        // Get position in front of player
+        // 1. Calculate the starting point for our raycast
+        Vector3 forward = Vector3.ProjectOnPlane(playerCamera.transform.forward, Vector3.up).normalized;
         Vector3 placementPoint = transform.position + (forward * selectedBuilding.placementDistance);
-        
-        // Cast a larger ray to better handle uneven terrain
-        Ray ray = new Ray(placementPoint + Vector3.up * 10f, Vector3.down);
-        RaycastHit[] hits = Physics.RaycastAll(ray, 20f);
-        
-        // Find the highest point that's tagged as placeable
+
+        // 2. Start raycast from above the point to handle uneven terrain
+        Vector3 rayStart = placementPoint + Vector3.up * 10f;
+
+        // 3. Use RaycastNonAlloc for better performance
+        int hitCount = Physics.RaycastNonAlloc(
+            rayStart,          // Start position
+            Vector3.down,      // Direction (downward)
+            hits,             // Pre-allocated array for results
+            20f              // Maximum distance to check
+        );
+
+        // 4. Find the highest valid placement point
         float highestPoint = float.NegativeInfinity;
         bool foundPlaceable = false;
-        
-        foreach (RaycastHit hit in hits)
+
+        for (int i = 0; i < hitCount; i++)
         {
-            if (hit.collider.CompareTag(PLACEABLE_TAG) && hit.point.y > highestPoint)
+            // 5. Check if this hit point is on placeable terrain
+            if (hits[i].collider.CompareTag(PLACEABLE_TAG) ||
+                (hits[i].collider.transform.parent != null && hits[i].collider.transform.parent.CompareTag(PLACEABLE_TAG)))
             {
-                position = hit.point;
-                highestPoint = hit.point.y;
-                foundPlaceable = true;
+                // 6. Keep track of the highest valid point
+                if (hits[i].point.y > highestPoint)
+                {
+                    position = hits[i].point;
+                    highestPoint = hits[i].point.y;
+                    foundPlaceable = true;
+                }
+            }
+            else
+            {
+                Debug.Log("Non-placable Terrain");
             }
         }
-        
+
         if (foundPlaceable)
         {
-            // Calculate rotation based on camera's Y rotation only
-            float yRotation = mainCamera.transform.eulerAngles.y;
-            rotation = Quaternion.Euler(0, yRotation, 0) * Quaternion.Euler(selectedBuilding.rotationOffset);
+            // 7. Set rotation based on camera direction
+            rotation = Quaternion.Euler(0, playerCamera.transform.eulerAngles.y, 0) *
+                      Quaternion.Euler(selectedBuilding.rotationOffset);
             return true;
         }
-        
+
         return false;
     }
-    
+
     private void PlaceBuilding(Vector3 position, Quaternion rotation)
     {
         BuildingObject selectedBuilding = GetSelectedBuilding();
