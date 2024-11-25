@@ -11,9 +11,11 @@ public class SimplePathfinding : MonoBehaviour
     private float attackRange = 1f;
     private float attackCooldown = 2f;
     private float nextAttackTime = 0;
+    [SerializeField] private Animator animator;
 
     void Start()
     {
+        //assign objects for each player to be tracked.
         try
         {
             P1Object = GameObject.Find("Players").transform.Find("Player 1").gameObject;
@@ -21,8 +23,6 @@ public class SimplePathfinding : MonoBehaviour
         catch (System.Exception e)
         {
             Debug.LogWarning($"P1 Not Found, Cannot Pathfind. Error: {e.Message}");
-            // or for more details including the stack trace:
-            // Debug.LogWarning($"P1 Not Found, Cannot Pathfind. Error: {e}");
         }
         try
         {
@@ -31,8 +31,6 @@ public class SimplePathfinding : MonoBehaviour
         catch (System.Exception e)
         {
             Debug.LogWarning($"P1 Not Found, Cannot Pathfind. Error: {e.Message}");
-            // or for more details including the stack trace:
-            // Debug.LogWarning($"P1 Not Found, Cannot Pathfind. Error: {e}");
         }
     }
 
@@ -56,7 +54,7 @@ public class SimplePathfinding : MonoBehaviour
             P2Distance = (currentPos - P2Pos.Value).magnitude;
         }
 
-        // Determine target position
+        // Determine target position, based on distance and whether players have any health.
         if (P1Object && P2Object)
         {
             var P1Health = P1Object.GetComponent<Health>();
@@ -85,13 +83,25 @@ public class SimplePathfinding : MonoBehaviour
         }
 
         // Move towards target
+        transform.rotation = Quaternion.LookRotation(desiredPosition - currentPos);
         transform.position = Vector3.Lerp(currentPos, desiredPosition, smoothSpeed * Time.deltaTime);
+        if (desiredPosition != currentPos)
+        {
+            animator.SetBool("IsWalking", true);
+            Debug.Log("IsWalking set to true.");
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+            Debug.Log("IsWalking set to false.");
+        }
 
         // Attack logic with null checks
         if (Time.time > nextAttackTime)
         {
             if (P1Object && P1Distance <= attackRange)
             {
+                animator.SetTrigger("Attack");
                 var health = P1Object.GetComponent<Health>();
                 if (health != null)
                 {
@@ -101,6 +111,7 @@ public class SimplePathfinding : MonoBehaviour
             }
             if (P2Object && P2Distance <= attackRange)
             {
+                animator.SetTrigger("Attack");
                 var health = P2Object.GetComponent<Health>();
                 if (health != null)
                 {

@@ -11,22 +11,18 @@ public class EnemySpawner : MonoBehaviour
     public GameObject WeakZombiePrefab;
     private List<SpawnPoint> spawnPoints;
 
-    List<Vector3> vector3List = new List<Vector3>
-        {
-            new Vector3(1.0f, 5f, 3.0f),
-            new Vector3(4.0f, 5f, 6.0f),
-            new Vector3(7.0f, 5f, 9.0f)
-        };
     // Start is called before the first frame update
     void Start()
     {
+        //Create a list of spawnpoint objects
         spawnPoints = new List<SpawnPoint>(GameObject.FindObjectsOfType<SpawnPoint>());
     }
 
     void SpawnZombie(GameObject ZombieToSpawn)
     {
+        //check that spawnpoints exist
         if (spawnPoints.Count == 0) return;
-
+        //Choose a random spawnpoint, and spawn a zombie at that point.
         SpawnPoint randomPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
         Instantiate(ZombieToSpawn, randomPoint.transform.position, randomPoint.transform.rotation);
     }
@@ -38,6 +34,7 @@ public class EnemySpawner : MonoBehaviour
             GameTimer += Time.fixedDeltaTime;
             if (GameTimer >= TimeBetweenSpawn)
             {
+                //Spawns zombies intermittently
                 for (int i = 0; i < EnemiesSpawned; i++) {
                     SpawnZombie(WeakZombiePrefab);
                 }
