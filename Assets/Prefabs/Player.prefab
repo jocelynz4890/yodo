@@ -678,10 +678,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: 0
   isInteract: 0
+  canMove: 1
+  canFire: 1
+  canInteract: 1
   moveSpeed: 10
   gravityValue: -9.81
   jumpHeight: 1
-  rotationSpeed: 10
+  rotationSpeed: 1
   lookSpeedY: 0.1
 --- !u!114 &2029757524618260487
 MonoBehaviour:

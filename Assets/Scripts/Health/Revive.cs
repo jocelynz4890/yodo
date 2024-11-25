@@ -29,35 +29,37 @@ public class Revive : MonoBehaviour
     {
         otherIsDowned = otherHealth.currentHealth <= 0;
 
-        if (otherIsDowned && playerInput.isInteract)
+        if (otherIsDowned && playerInput.isInteract && Vector3.Distance(transform.position, otherPlayer.transform.position) <= reviveRange)
         {
-            if (Vector3.Distance(transform.position, otherPlayer.transform.position) <= reviveRange)
+            SetPlayerActions(false);
+            reviveTimer += Time.deltaTime;
+            text.text = "Reviving in " + (reviveDuration - reviveTimer).ToString("F1") + "s";
+            otherText.text = "Revive in " + (reviveDuration - reviveTimer).ToString("F1") + "s";
+            if (reviveTimer >= reviveDuration)
             {
-                reviveTimer += Time.deltaTime;
-                text.text = "Reviving in " + (reviveDuration - reviveTimer).ToString("F1") + "s";
-                otherText.text = "Revive in " + (reviveDuration - reviveTimer).ToString("F1") + "s";
-                if (reviveTimer >= reviveDuration)
-                {
-                    RevivePlayer();
-                }
-            }
-            else
-            {
-                text.text = "";
+                RevivePlayer();
             }
         }
         else if (otherIsDowned)
         {
+            SetPlayerActions(true);
             reviveTimer = 0f;
             text.text = "";
             otherText.text = "Wait for revive.";
         }
     }
 
-    public void RevivePlayer()
+    private void RevivePlayer()
     {
+        SetPlayerActions(true);
         text.text = "";
         otherHealth.Heal(otherHealth.maxHealth / 2);
+    }
+
+    private void SetPlayerActions(bool enabled)
+    {
+        playerInput.canMove = enabled;
+        playerInput.canFire = enabled;
     }
 }
 

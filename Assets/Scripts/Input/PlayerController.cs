@@ -5,6 +5,9 @@ public class PlayerController : MonoBehaviour
 {
     public bool fire = false;
     public bool isInteract = false;
+    // variables for other scripts to control whether players can do certain things
+    public bool canMove = true;
+    public bool canFire = true;
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityValue = -9.81f;
@@ -72,19 +75,20 @@ public class PlayerController : MonoBehaviour
         switch (context.action.name)
         {
             case "Move":
-                moveInput = context.ReadValue<Vector2>();
+                moveInput = canMove ? context.ReadValue<Vector2>() : Vector2.zero;
                 break;
             case "Look":
                 lookInput = context.ReadValue<Vector2>();
                 break;
             case "Jump":
+                if (!canMove) return;
                 if (controller.isGrounded && context.performed)
                 {
                     playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
                 }
                 break;
             case "Fire":
-                fire = context.performed;
+                fire = canFire ? context.performed : false;
                 break;
             case "Interact":
                 isInteract = context.performed;
@@ -93,6 +97,14 @@ public class PlayerController : MonoBehaviour
                 // Debug.Log("Unknown action: " + context.action.name);
                 break;
         }
+    }
+
+    public void ResetInputs()
+    {
+        moveInput = Vector2.zero;
+        lookInput = Vector2.zero;
+        fire = false;
+        isInteract = false;
     }
 
     private void Update()
@@ -113,7 +125,8 @@ public class PlayerController : MonoBehaviour
         controller.Move(move * (moveSpeed * Time.deltaTime));
 
         // Rotate player based on mouse X movement
-        transform.Rotate(Vector3.up * lookInput.x * rotationSpeed * Time.deltaTime);
+        // * Time.deltaTime
+        transform.Rotate(Vector3.up * lookInput.x * rotationSpeed);
 
         // Apply vertical look (camera pitch) based on mouse Y movement
         xRotation -= lookInput.y * lookSpeedY; // Adjust this value for desired sensitivity

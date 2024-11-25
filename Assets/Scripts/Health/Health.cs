@@ -47,6 +47,7 @@ public class Health : MonoBehaviour {
             if (gameObject.CompareTag("Player"))
             {
                 gameObject.GetComponent<PlayerController>().enabled = false;
+                gameObject.GetComponent<PlayerController>().ResetInputs();
                 text.text = "Wait for revive.";
             }
             else
