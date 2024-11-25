@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 106321588}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: PlacableTerrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameTimer: 0
-  TimeBetweenSpawn: 2
+  TimeBetweenSpawn: 73.87
   EnemiesSpawned: 1
   IsPaused: 0
   WeakZombiePrefab: {fileID: 3223798713995455719, guid: 66dd5d6ca1d81334fa27fb2841a45081, type: 3}
@@ -394,6 +394,10 @@ PrefabInstance:
     - target: {fileID: 537566752567169086, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979288192266518671, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
+      propertyPath: availableBuildings.Array.data[0].placementDistance
+      value: 2.36
       objectReference: {fileID: 0}
     - target: {fileID: 2477255737072303423, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -730,6 +734,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 537566752567169086, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979288192266518671, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
+      propertyPath: selectedBuildingIndex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2477255737072303423, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}

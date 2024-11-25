@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: -3307278768934978575}
   - component: {fileID: 2029757524618260487}
   - component: {fileID: -7787930911982333758}
+  - component: {fileID: 1979288192266518671}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -678,13 +679,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: 0
   isInteract: 0
-  canMove: 1
-  canFire: 1
-  canInteract: 1
   moveSpeed: 10
   gravityValue: -9.81
   jumpHeight: 1
-  rotationSpeed: 1
+  rotationSpeed: 10
   lookSpeedY: 0.1
 --- !u!114 &2029757524618260487
 MonoBehaviour:
@@ -715,81 +713,29 @@ MonoBehaviour:
   reviveDuration: 5
   reviveRange: 5
   otherPlayer: {fileID: 0}
---- !u!1 &5783486991206362333
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3511886770416785041}
-  - component: {fileID: 8794376924382308591}
-  - component: {fileID: 254927964270592988}
-  m_Layer: 5
-  m_Name: HitMarker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &3511886770416785041
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5783486991206362333}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8514544732185773716}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8794376924382308591
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5783486991206362333}
-  m_CullTransparentMesh: 1
---- !u!114 &254927964270592988
+--- !u!114 &1979288192266518671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5783486991206362333}
+  m_GameObject: {fileID: 5232656313128310149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 77994f855ae0fa04d88ff9b19d8f27a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e475cc1c13f8d745af833636d6b483a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  availableBuildings:
+  - buildingName: WoodenWall
+    prefab: {fileID: 153828, guid: b889660d619fb7841ac45c47fe8235b7, type: 3}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    placementDistance: 0.08
+    materialCost: 0
+  selectedBuildingIndex: 0
+  hasToolbox: 1
+  hasMaterials: 1
+  raycastDistance: 100
+  showPlacementPreview: 1
 --- !u!1 &5796989009505575421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,9 +1242,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8726454759184623915, guid: a9de0c7ff8cde4730af1a5b28a204fd6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3511886770416785041}
     - targetCorrespondingSourceObject: {fileID: 8726454759184623915, guid: a9de0c7ff8cde4730af1a5b28a204fd6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3930128424209677133}
