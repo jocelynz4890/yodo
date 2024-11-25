@@ -1,8 +1,8 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class RaycastShootComplete : MonoBehaviour {
-
     public int gunDamage = 1;                                            // Set the number of hitpoints that this gun will take away from shot objects with a health script
     public float fireRate = 0.20f;                                        // Number in seconds which controls how often the player can fire
     public float weaponRange = 50f;                                        // Distance in Unity units over which the player can fire
@@ -15,6 +15,7 @@ public class RaycastShootComplete : MonoBehaviour {
     private LineRenderer laserLine;                                        // Reference to the LineRenderer component which will display our laserline
     private float nextFire;                                                // Float to store the time the player will be allowed to fire again, after firing
     private PlayerController playerInput;
+    private GameObject hitMarker;
 
     void Start () 
     {
@@ -26,8 +27,8 @@ public class RaycastShootComplete : MonoBehaviour {
 
         // Get and store a reference to our Camera by searching this GameObject and its parents
         fpsCam = GetComponentInParent<Camera>();
-
         playerInput = GetComponentInParent<PlayerController>();
+        hitMarker = transform.Find("../../Canvas/HitMarker").gameObject;
     }
 
 
@@ -65,11 +66,11 @@ public class RaycastShootComplete : MonoBehaviour {
                     health = hit.collider.GetComponentInParent<Health>();
                 }
                 // If there was a health script attached (either directly or on parent)
-                // !hit.collider.GetComponentInParent<PlayerController>()
-                if (health != null)
+                if (health != null && !hit.collider.GetComponentInParent<PlayerController>())
                 {
                     // Call the damage function of that script, passing in our gunDamage variable
                     health.Damage(gunDamage);
+                    StartCoroutine(ActivateHitMarker());
                 }
 
                 // Check if the object we hit has a rigidbody attached
@@ -100,5 +101,12 @@ public class RaycastShootComplete : MonoBehaviour {
 
         // Deactivate our line renderer after waiting
         laserLine.enabled = false;
+    }
+
+    private IEnumerator ActivateHitMarker()
+    {
+        hitMarker.SetActive(true);
+        yield return new WaitForSeconds(fireRate / 2);
+        hitMarker.SetActive(false);
     }
 }

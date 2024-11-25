@@ -9,19 +9,27 @@ public class Health : MonoBehaviour {
 
     private TextMeshProUGUI text;
     private TextMeshProUGUI healthText;
-    private Slider healthBar;
+    private Slider playerHealthBar;
+    private MeshRenderer zombieHealthBar;
+    private float zombieMaxScale;
 
     void Start()
     {
-        text = transform.Find("Canvas/Text").GetComponent<TextMeshProUGUI>();
-        healthText = transform.Find("Canvas/Health/HealthText").GetComponent<TextMeshProUGUI>();
-        healthBar = transform.Find("Canvas/Health/HealthBar").GetComponent<Slider>();
+        text = transform.Find("Canvas/Text")?.GetComponent<TextMeshProUGUI>();
+        healthText = transform.Find("Canvas/Health/HealthText")?.GetComponent<TextMeshProUGUI>();
+        playerHealthBar = transform.Find("Canvas/Health/HealthBar")?.GetComponent<Slider>();
+        zombieHealthBar = transform.Find("HealthBar/Active")?.GetComponent<MeshRenderer>();
 
-        if (healthBar != null)
+        if (playerHealthBar != null)
         {
             currentHealth = maxHealth;
-            healthBar.maxValue = maxHealth;
-            healthBar.value = currentHealth;
+            playerHealthBar.maxValue = maxHealth;
+            playerHealthBar.value = currentHealth;
+        }
+
+        if (zombieHealthBar != null)
+        {
+            zombieMaxScale = zombieHealthBar.transform.localScale.x;
         }
     }
 
@@ -53,23 +61,41 @@ public class Health : MonoBehaviour {
         if (currentHealth == 0)
         {
             // Revived so give back player controls
-            gameObject.GetComponent<PlayerController>().enabled = true;
-            text.text = "";
+            if (gameObject.CompareTag("Player"))
+            {
+                gameObject.GetComponent<PlayerController>().enabled = true;
+                text.text = "";
+            }
         }
 
         if (currentHealth < maxHealth)
         {
-            // Add health to the player
+            // Add health
             currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
         }
     }
 
     void Update()
     {
-        if (healthBar != null)
+        if (playerHealthBar != null)
         {
             // Update the health bar value based on the player's health
-            healthBar.value = currentHealth;
+            playerHealthBar.value = currentHealth;
+        }
+
+        if (zombieHealthBar != null)
+        {
+            // Update the health bar value based on the zombie's health
+            zombieHealthBar.transform.localScale = new Vector3(
+                zombieMaxScale * (float)currentHealth / maxHealth,
+                zombieHealthBar.transform.localScale.y,
+                zombieHealthBar.transform.localScale.z
+            );
+            zombieHealthBar.transform.localPosition = new Vector3(
+                zombieMaxScale * (1 - (float)currentHealth / maxHealth) / 2,
+                zombieHealthBar.transform.localPosition.y,
+                zombieHealthBar.transform.localPosition.z
+            );
         }
 
         if (healthText != null)
