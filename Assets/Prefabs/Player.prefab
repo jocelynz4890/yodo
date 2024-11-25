@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: -3307278768934978575}
   - component: {fileID: 2029757524618260487}
   - component: {fileID: -7787930911982333758}
-  - component: {fileID: -4965290706745906707}
+  - component: {fileID: 1979288192266518671}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -713,7 +713,7 @@ MonoBehaviour:
   reviveDuration: 5
   reviveRange: 5
   otherPlayer: {fileID: 0}
---- !u!114 &-4965290706745906707
+--- !u!114 &1979288192266518671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -729,15 +729,13 @@ MonoBehaviour:
   - buildingName: WoodenWall
     prefab: {fileID: 153828, guid: b889660d619fb7841ac45c47fe8235b7, type: 3}
     rotationOffset: {x: 0, y: 0, z: 0}
-    placementDistance: 11.5
+    placementDistance: 0.08
     materialCost: 0
   selectedBuildingIndex: 0
   hasToolbox: 1
   hasMaterials: 1
+  raycastDistance: 100
   showPlacementPreview: 1
-  previewMaterial: {fileID: 2100000, guid: 7bd15018d9d4cc34a92d74ac3d57b63f, type: 2}
-  playerInput: {fileID: 0}
-  placeBuildingActionName: Fire
 --- !u!1 &5796989009505575421
 GameObject:
   m_ObjectHideFlags: 0

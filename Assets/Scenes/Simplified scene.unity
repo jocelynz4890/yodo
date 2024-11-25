@@ -127,11 +127,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5232656313128310149, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
   m_PrefabInstance: {fileID: 1667762382}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &61669498 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5232656313128310149, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
-  m_PrefabInstance: {fileID: 1069927429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &106321587
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameTimer: 0
-  TimeBetweenSpawn: 10
+  TimeBetweenSpawn: 73.87
   EnemiesSpawned: 1
   IsPaused: 0
   WeakZombiePrefab: {fileID: 3223798713995455719, guid: 66dd5d6ca1d81334fa27fb2841a45081, type: 3}
@@ -376,10 +371,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133548713}
     m_Modifications:
-    - target: {fileID: -7787930911982333758, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
-      propertyPath: otherPlayer
-      value: 
-      objectReference: {fileID: 11438261}
     - target: {fileID: -3307278768934978575, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
       propertyPath: lookSpeedY
       value: 0.05
@@ -406,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1979288192266518671, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
       propertyPath: availableBuildings.Array.data[0].placementDistance
-      value: 3.16
+      value: 2.36
       objectReference: {fileID: 0}
     - target: {fileID: 2477255737072303423, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -646,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3846668828958742705, guid: a9564d3110fdc8c439d29f34780a1daf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 3846668828958742705, guid: a9564d3110fdc8c439d29f34780a1daf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -729,10 +720,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1133548713}
     m_Modifications:
-    - target: {fileID: -7787930911982333758, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
-      propertyPath: otherPlayer
-      value: 
-      objectReference: {fileID: 61669498}
     - target: {fileID: -3307278768934978575, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
       propertyPath: rotationSpeed
       value: 3
@@ -919,7 +906,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
-    - {fileID: 1979288192266518671, guid: 7e760dc16aa0d5c4d8db7d708b87ca9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
