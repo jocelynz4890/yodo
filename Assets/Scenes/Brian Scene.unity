@@ -597,7 +597,7 @@ MonoBehaviour:
   TimeBetweenSpawn: 1
   EnemiesSpawned: 5
   IsPaused: 0
-  WeakZombiePrefab: {fileID: 4384626086245211406, guid: f8baafc0e0029714aa4332a058b237cf, type: 3}
+  WeakZombiePrefab: {fileID: 3223798713995455719, guid: 66dd5d6ca1d81334fa27fb2841a45081, type: 3}
 --- !u!4 &321747947
 Transform:
   m_ObjectHideFlags: 0
