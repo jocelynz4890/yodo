@@ -387,7 +387,7 @@ MonoBehaviour:
   P2Object: {fileID: 0}
   P1offset: {x: 0, y: 0, z: 0}
   P2offset: {x: 0, y: 0, z: 0}
-  smoothSpeed: 6
+  smoothSpeed: 8
   animator: {fileID: 8389187686745584526}
 --- !u!54 &7817404876569199599
 Rigidbody:
