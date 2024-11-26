@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SimplePathfinding : MonoBehaviour
 {
+    [SerializeField] private Rigidbody rb;
     [SerializeField] public GameObject P1Object;
     [SerializeField] public GameObject P2Object;
     private bool P1Closer = true;
@@ -83,8 +84,15 @@ public class SimplePathfinding : MonoBehaviour
         }
 
         // Move towards target
-        transform.rotation = Quaternion.LookRotation(desiredPosition - currentPos);
-        transform.position = Vector3.Lerp(currentPos, desiredPosition, smoothSpeed * Time.deltaTime);
+        Vector3 direction = (desiredPosition - currentPos).normalized;
+        direction.y = 0; // Lock vertical direction for both rotation and movement
+
+        if (direction != Vector3.zero) // Prevent errors when direction is zero
+        {
+            transform.rotation = Quaternion.LookRotation(direction);
+            rb.MovePosition(currentPos + direction * smoothSpeed * Time.fixedDeltaTime);
+        }
+
         if (desiredPosition != currentPos)
         {
             animator.SetBool("IsWalking", true);
