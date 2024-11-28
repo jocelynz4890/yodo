@@ -776,7 +776,7 @@ MonoBehaviour:
   - buildingName: WoodenWall
     prefab: {fileID: 153828, guid: b889660d619fb7841ac45c47fe8235b7, type: 3}
     rotationOffset: {x: 0, y: 0, z: 0}
-    placementDistance: 11.5
+    placementDistance: 2.9
     materialCost: 0
   selectedBuildingIndex: 0
   hasToolbox: 1
