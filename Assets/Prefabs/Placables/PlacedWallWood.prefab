@@ -342,6 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458460}
   - component: {fileID: -4200888717877742681}
+  - component: {fileID: 95905096417158833}
   m_Layer: 0
   m_Name: PlacedWallWood
   m_TagString: Untagged
@@ -386,6 +387,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.54, y: 4.687618, z: 0.12199052}
   m_Center: {x: 0.49, y: 1.8438094, z: -0.16038275}
+--- !u!114 &95905096417158833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d799c44c1d5347e59ab2029911446ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Wall
 --- !u!1 &159440
 GameObject:
   m_ObjectHideFlags: 0

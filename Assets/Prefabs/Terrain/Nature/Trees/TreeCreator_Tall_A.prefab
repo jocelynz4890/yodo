@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3380234}
   - component: {fileID: 2393040}
   - component: {fileID: -4484301666209355601}
+  - component: {fileID: -5996093589940375305}
   m_Layer: 0
   m_Name: TreeCreator_Tall_A
   m_TagString: Untagged
@@ -117,6 +118,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4329908}
+--- !u!114 &-5996093589940375305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d799c44c1d5347e59ab2029911446ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: Tree
 --- !u!21 &2179674
 Material:
   serializedVersion: 8

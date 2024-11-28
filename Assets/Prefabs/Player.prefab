@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06622d8087204207a796d702bd722a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelectionText: {fileID: 6607583571576440724}
 --- !u!1 &4443783916468101776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1334,22 @@ PrefabInstance:
     - target: {fileID: 4422523694466502775, guid: a9de0c7ff8cde4730af1a5b28a204fd6, type: 3}
       propertyPath: m_Name
       value: Crosshair
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422523694466502775, guid: a9de0c7ff8cde4730af1a5b28a204fd6, type: 3}
+      propertyPath: m_TagString
+      value: Crosshair
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929744680702748731, guid: a9de0c7ff8cde4730af1a5b28a204fd6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929744680702748731, guid: a9de0c7ff8cde4730af1a5b28a204fd6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929744680702748731, guid: a9de0c7ff8cde4730af1a5b28a204fd6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8726454759184623915, guid: a9de0c7ff8cde4730af1a5b28a204fd6, type: 3}
       propertyPath: m_Pivot.x
