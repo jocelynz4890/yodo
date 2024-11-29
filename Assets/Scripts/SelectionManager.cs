@@ -7,14 +7,20 @@ using TMPro;
 
 public class SelectionManager : MonoBehaviour
 {
-    public GameObject SelectionText;
-    private GameObject crosshair;
+    public GameObject SelectionText; // The UI Text object for showing interaction text
+    public GameObject crosshair; // The crosshair UI Image
     private TextMeshProUGUI interaction_text;
 
     private void Start()
     {
+        // Initialize the interaction text component
         interaction_text = SelectionText.GetComponent<TextMeshProUGUI>();
-        GameObject crosshair = GameObject.Find("Crosshair");
+
+        // Find the crosshair UI element if not assigned
+        if (crosshair == null)
+        {
+            crosshair = GameObject.Find("Crosshair");
+        }
     }
 
     void Update()
@@ -26,30 +32,39 @@ public class SelectionManager : MonoBehaviour
         {
             var selectionTransform = hit.transform;
 
-            if (selectionTransform.GetComponent<InteractableObjectName>())
+            // Check if the hit object has the InteractableObjectName component
+            var interactableObject = selectionTransform.GetComponent<InteractableObjectName>();
+            if (interactableObject)
             {
-                interaction_text.text = selectionTransform.GetComponent<InteractableObjectName>().GetItemName();
+                // Update the interaction text
+                interaction_text.text = interactableObject.GetItemName();
+
+                // Change the crosshair color based on the interaction
                 if (interaction_text.text == "Zombie")
                 {
-                    crosshair.GetComponent<Image>().material.color = Color.red; // Change crosshair to red
+                    crosshair.GetComponent<Image>().color = Color.red; // Set crosshair to red
                 }
                 else
                 {
-                    crosshair.GetComponent<Image>().material.color = Color.white; // Reset crosshair to white
-                    SelectionText.SetActive(true);
+                    SelectionText.SetActive(true); // Make the text visible
+                    crosshair.GetComponent<Image>().color = Color.white; // Reset crosshair to white
                 }
             }
             else
             {
-                crosshair.GetComponent<Image>().material.color = Color.white; // Reset crosshair to white
-                SelectionText.SetActive(false);
+                ResetUI(); // Reset the UI when no interactable object is found
             }
         }
         else
         {
-            // Ensure the UI is hidden and crosshair is reset if no object is hit
-            crosshair.GetComponent<Renderer>().material.color = Color.white;
-            SelectionText.SetActive(false);
+            ResetUI(); // Reset the UI if the raycast hits nothing
         }
+    }
+
+    // Helper method to reset the UI
+    private void ResetUI()
+    {
+        crosshair.GetComponent<Image>().color = Color.white; // Reset crosshair to white
+        SelectionText.SetActive(false); // Hide the text
     }
 }
