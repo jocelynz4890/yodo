@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -13,7 +14,7 @@ public class SelectionManager : MonoBehaviour
     private void Start()
     {
         interaction_text = SelectionText.GetComponent<TextMeshProUGUI>();
-        crosshair = GameObject.FindGameObjectWithTag("Crosshair");
+        GameObject crosshair = GameObject.Find("Crosshair");
     }
 
     void Update()
@@ -25,23 +26,22 @@ public class SelectionManager : MonoBehaviour
         {
             var selectionTransform = hit.transform;
 
-            if (selectionTransform.GetComponent<InteractableObject>())
+            if (selectionTransform.GetComponent<InteractableObjectName>())
             {
-                interaction_text.text = selectionTransform.GetComponent<InteractableObject>().GetItemName();
+                interaction_text.text = selectionTransform.GetComponent<InteractableObjectName>().GetItemName();
                 if (interaction_text.text == "Zombie")
                 {
-                    crosshair.GetComponent<Renderer>().material.color = Color.red; // Change crosshair to red
+                    crosshair.GetComponent<Image>().material.color = Color.red; // Change crosshair to red
                 }
                 else
                 {
-                    crosshair.GetComponent<Renderer>().material.color = Color.white; // Reset crosshair to white
+                    crosshair.GetComponent<Image>().material.color = Color.white; // Reset crosshair to white
+                    SelectionText.SetActive(true);
                 }
-
-                SelectionText.SetActive(true);
             }
             else
             {
-                crosshair.GetComponent<Renderer>().material.color = Color.white; // Reset crosshair to white
+                crosshair.GetComponent<Image>().material.color = Color.white; // Reset crosshair to white
                 SelectionText.SetActive(false);
             }
         }
