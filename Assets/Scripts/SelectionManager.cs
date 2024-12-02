@@ -10,6 +10,8 @@ public class SelectionManager : MonoBehaviour
     public GameObject SelectionText; // The UI Text object for showing interaction text
     public GameObject crosshair; // The crosshair UI Image
     private TextMeshProUGUI interaction_text;
+    public bool onTarget; // track to make sure cursor is on object, not its collider
+    public bool isPlayer1;
 
     private void Start()
     {
@@ -34,8 +36,9 @@ public class SelectionManager : MonoBehaviour
 
             // Check if the hit object has the InteractableObjectName component
             var interactableObject = selectionTransform.GetComponent<InteractableObjectName>();
-            if (interactableObject)
+            if (interactableObject && ((isPlayer1 && interactableObject.player1InRange) || (!isPlayer1 && interactableObject.player2InRange)) )
             {
+                onTarget = true;
                 // Update the interaction text
                 interaction_text.text = interactableObject.GetItemName();
 
@@ -52,11 +55,13 @@ public class SelectionManager : MonoBehaviour
             }
             else
             {
+                onTarget = false;
                 ResetUI(); // Reset the UI when no interactable object is found
             }
         }
         else
         {
+            onTarget = false;
             ResetUI(); // Reset the UI if the raycast hits nothing
         }
     }
