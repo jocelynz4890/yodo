@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlacableTerrain
   - Crosshair
+  - InventoryItem
   layers:
   - Default
   - TransparentFX
