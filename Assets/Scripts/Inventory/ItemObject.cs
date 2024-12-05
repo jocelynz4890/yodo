@@ -9,10 +9,6 @@ public class ItemObject : MonoBehaviour
     public void OnHandlePickupItem(InventorySystem playerInventory)
     {
         playerInventory.Add(referenceItem);
-    }
-    
-    public void OnHandleDropItem(InventorySystem playerInventory)
-    {
-        playerInventory.Remove(referenceItem);
+        playerInventory.Equip(referenceItem);
     }
 }
