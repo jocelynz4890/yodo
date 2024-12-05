@@ -390,7 +390,7 @@ MonoBehaviour:
   P2Object: {fileID: 0}
   P1offset: {x: 0, y: 0, z: 0}
   P2offset: {x: 0, y: 0, z: 0}
-  smoothSpeed: 8
+  smoothSpeed: 6
   animator: {fileID: 8389187686745584526}
 --- !u!54 &7817404876569199599
 Rigidbody:
@@ -432,6 +432,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Zombie
+  player1InRange: 0
+  player2InRange: 0
+  amount: 0
 --- !u!1 &7086039492455015166 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8121686736740376697, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}

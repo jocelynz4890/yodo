@@ -1722,6 +1722,7 @@ GameObject:
   - component: {fileID: 578376449398627443}
   - component: {fileID: 7389507112651452681}
   - component: {fileID: -8055808184077998024}
+  - component: {fileID: 7829470922652795778}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Untagged
@@ -1793,6 +1794,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Zombie
+  player1InRange: 0
+  player2InRange: 0
+  amount: 0
+--- !u!65 &7829470922652795778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493914613880827488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.7936374, z: 0.41489935}
+  m_Center: {x: 0, y: 0.92328054, z: -0.04393071}
 --- !u!1 &4710940672626480558
 GameObject:
   m_ObjectHideFlags: 0

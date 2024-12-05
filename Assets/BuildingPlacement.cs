@@ -67,17 +67,21 @@ public class BuildingPlacement : MonoBehaviour
         }
     }
     
-private void Update()
-{
-    if (showPlacementPreview && CanPlace())
+    private void Update()
     {
-        UpdateBuildingPreview();
+        if (showPlacementPreview && CanPlace())
+        {
+            UpdateBuildingPreview();
+        }
+        if (!hasToolbox)
+        {
+                previewObject.SetActive(false);
+        }
     }
-}
     
     private void UpdateBuildingPreview()
     {
-        if (previewObject == null && GetSelectedBuilding()?.prefab != null)
+        if (hasToolbox && previewObject == null && GetSelectedBuilding()?.prefab != null)
         {
             previewObject = Instantiate(GetSelectedBuilding().prefab);
             SetPreviewMaterial(previewObject);
@@ -97,6 +101,7 @@ private void Update()
             {
                 previewObject.SetActive(false);
             }
+
         }
     }
 
