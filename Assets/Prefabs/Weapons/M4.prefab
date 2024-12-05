@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 221451201388659691}
   m_Layer: 0
   m_Name: M4
-  m_TagString: InventoryItem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786097810451525583, guid: 260ff1508afea5241b6511d8fbe92201, type: 3}
       propertyPath: m_TagString
-      value: InventoryItem
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6559362985659250037, guid: 260ff1508afea5241b6511d8fbe92201, type: 3}
       propertyPath: m_LocalScale.x

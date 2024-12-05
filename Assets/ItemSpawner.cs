@@ -7,7 +7,7 @@ public class ItemSpawner : MonoBehaviour
     public GameObject[] itemPrefabs;
     
     [Header("Spawn Area")]
-    public Vector3 center = new Vector3(350, 0, -25);
+    public Vector3 center = new Vector3(350, 1, -25);
     public Vector3 areaSize = new Vector3(10, 0, 10); 
     void Start()
     {
@@ -31,7 +31,8 @@ public class ItemSpawner : MonoBehaviour
                 Random.Range(center.z - areaSize.z / 2, center.z + areaSize.z / 2)
             );
             
-            Instantiate(prefab, randomPosition, Quaternion.identity);
+            var collectible = Instantiate(prefab, randomPosition, Quaternion.identity);
+            collectible.transform.GetChild(0).gameObject.tag = "CanPickUp";
         }
     }
     

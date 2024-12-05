@@ -6,7 +6,8 @@ TagManager:
   tags:
   - PlacableTerrain
   - Crosshair
-  - InventoryItem
+  - CanPickUp
+  - Equipped
   layers:
   - Default
   - TransparentFX

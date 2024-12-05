@@ -5,9 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a5adab-6a80-40eb-bd33-a378728420ba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.yodo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.yodo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Prefabs/MP7/Prefabs/MP7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Prefabs/MP7/Prefabs/MP7.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Prefabs/WeaponPack/LowPolyWeaponsLite_2020.3.0_HDRP_v1.0.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Prefabs/WeaponPack/LowPolyWeaponsLite_2020.3.0_URP_v1.0.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Prefabs/WeaponPack/Prefabs/M4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Prefabs/WeaponPack/Prefabs/M4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Prefabs/WeaponPack/Prefabs/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Prefabs/WeaponPack/Prefabs/Pistol.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Controls/PlayerInputActionAsset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Controls/PlayerInputActionAsset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Controls/PlayerInputActionAsset.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Controls/PlayerInputActionAsset.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ItemSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ItemSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Hammer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Hammer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pineapple.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pineapple.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SquarePlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SquarePlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Knife.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Knife.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/M4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/M4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MP7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/MP7.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Pistol.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Angel Scene 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Angel Scene 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/ItemObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/PickupItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/PickupItem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Interact.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +44,21 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Editor/FolderPreset.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Input/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Prefabs/Weapons/M4.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Prefabs/Weapons/MP7.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.editorcoroutines@1.0.0/Editor/EditorCoroutineUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.editorcoroutines@1.0.0/Editor/EditorWaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.editorcoroutines@1.0.0/Editor/EditorWindowCoroutineExtension.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/Discovery.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/RiderInitializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.31/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/ProjectGeneration/ProjectGeneration.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@2.0.22/Editor/SimpleJSON.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/ComparisonTable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/ProfileAnalysis.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/ProfileAnalyzerShader.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/InputField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -38,19 +71,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "awhipp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;awhipp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.48f1/Unity.app/Contents/MacOS/Unity" />
@@ -103,6 +136,7 @@
       <workItem from="1732035904463" duration="8235000" />
       <workItem from="1732638610007" duration="28414000" />
       <workItem from="1733179350028" duration="13675000" />
+      <workItem from="1733363902645" duration="17345000" />
     </task>
     <servers />
   </component>

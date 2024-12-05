@@ -89,6 +89,15 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drop"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e671479-d2e8-49ed-b232-9760442422b6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -419,6 +428,17 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e378276-d8cb-4da9-882c-63ace07d38d1"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse;Gamepad"",
+                    ""action"": ""Drop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1035,6 +1055,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
         m_Player_LookLeft = m_Player.FindAction("LookLeft", throwIfNotFound: true);
         m_Player_LookRight = m_Player.FindAction("LookRight", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Drop = m_Player.FindAction("Drop", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1121,6 +1142,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
     private readonly InputAction m_Player_LookLeft;
     private readonly InputAction m_Player_LookRight;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Drop;
     public struct PlayerActions
     {
         private @PlayerInputActionAsset m_Wrapper;
@@ -1132,6 +1154,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
         public InputAction @LookLeft => m_Wrapper.m_Player_LookLeft;
         public InputAction @LookRight => m_Wrapper.m_Player_LookRight;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @Drop => m_Wrapper.m_Player_Drop;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1162,6 +1185,9 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Drop.started += instance.OnDrop;
+            @Drop.performed += instance.OnDrop;
+            @Drop.canceled += instance.OnDrop;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1187,6 +1213,9 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Drop.started -= instance.OnDrop;
+            @Drop.performed -= instance.OnDrop;
+            @Drop.canceled -= instance.OnDrop;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1394,6 +1423,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
         void OnLookLeft(InputAction.CallbackContext context);
         void OnLookRight(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnDrop(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

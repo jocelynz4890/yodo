@@ -12,22 +12,22 @@ public class InventorySlot : MonoBehaviour
     [SerializeField] 
     private TextMeshProUGUI label;
     
-    private InventorySystem inventorySystem;
+    private InventorySystem _inventorySystem;
 
     public void Set(InventoryItem item)
     {
-        Debug.Log(item != null ? "Updating UI inventory slot." : "Clearing UI inventory slot.");
         icon.sprite = item?.data.icon;
         label.text = item?.data.displayName ?? "";
     }
 
     public void Awake()
     {
+        // Revise for materials slot
         icon = transform.Find("Icon").GetComponent<Image>();
         label = transform.Find("Label").GetComponent<TextMeshProUGUI>();
         
-        inventorySystem = GetComponentInParent<InventorySystem>();
-        if (inventorySystem == null)
+        _inventorySystem = GetComponentInParent<InventorySystem>();
+        if (_inventorySystem == null)
         {
             Debug.LogError("InventorySystem not found in parent hierarchy.");
             return;
@@ -37,9 +37,19 @@ public class InventorySlot : MonoBehaviour
 
     private void OnUpdateInventory()
     {
-        foreach (var item in inventorySystem.inventory)
+        if (_inventorySystem.inventory.Count > 0)
         {
-            Set(item);
+            Debug.Log("Updating inventory slot");
+            foreach (var item in _inventorySystem.inventory)
+            {
+                // Revise for materials slot
+                Set(item);
+            }
+        }
+        else
+        {
+            Debug.Log("Clearing inventory slot");
+            Set(null);
         }
     }
     
