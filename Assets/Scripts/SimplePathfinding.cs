@@ -90,7 +90,8 @@ public class SimplePathfinding : MonoBehaviour
         if (direction != Vector3.zero) // Prevent errors when direction is zero
         {
             transform.rotation = Quaternion.LookRotation(direction);
-            rb.MovePosition(currentPos + direction * smoothSpeed * Time.fixedDeltaTime);
+            Vector3 targetPosition = currentPos + direction * smoothSpeed * Time.fixedDeltaTime;
+            rb.velocity = (targetPosition - currentPos) / Time.fixedDeltaTime;
         }
 
         if (desiredPosition != currentPos)
