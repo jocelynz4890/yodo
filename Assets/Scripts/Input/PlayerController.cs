@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityValue = -9.81f;
-    [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float rotationSpeed = 0.1f;
     [SerializeField] private float lookSpeedY = 0.1f; // Add a look speed for vertical movement
 
@@ -83,11 +82,6 @@ public class PlayerController : MonoBehaviour
                 lookInput = canLook ? context.ReadValue<Vector2>() : Vector2.zero;
                 break;
             case "Jump":
-                if (!canMove) return;
-                if (controller.isGrounded && context.performed)
-                {
-                    playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-                }
                 break;
             case "Fire":
                 fire = canFire ? context.performed : false;
