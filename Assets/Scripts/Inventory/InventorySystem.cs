@@ -1,18 +1,14 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
-    private Dictionary<InventoryItemData, InventoryItem> _itemDictionary;
-    public List<InventoryItem> inventory { get; private set; }
     private PlayerController _controller;
     private BuildingPlacement _buildSettings;
     
+    public Dictionary<InventoryItemData, InventoryItem> itemDictionary { get; private set; }
     public InventoryItemData weapon { get; private set; }
-    
-    public InventoryItemData material { get; private set; }
     
     public static event Action OnInventoryChangedEvent;
     
@@ -20,72 +16,38 @@ public class InventorySystem : MonoBehaviour
     {
         _controller = GetComponent<PlayerController>();
         _buildSettings = GetComponent<BuildingPlacement>();
-        _itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
-        inventory = new List<InventoryItem>();
+        itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
     }
 
     public InventoryItem Get(InventoryItemData referenceData)
     {
-        var value = _itemDictionary.GetValueOrDefault(referenceData, null);
+        var value = itemDictionary.GetValueOrDefault(referenceData, null);
         return value;
     }
-    
-    public void Add(InventoryItemData referenceData)
+
+    public void AddWeapon(InventoryItemData referenceData)
     {
-        int amount = referenceData.type == "RESOURCE" ? 30 : 1;
-        if (_itemDictionary.TryGetValue(referenceData, out InventoryItem value))
+        InventoryItem newItem = new InventoryItem(referenceData);
+        itemDictionary.Add(referenceData, newItem);
+        weapon = referenceData;
+        if (referenceData.displayName == "Axe")
         {
-            value.AddToStack(amount);
+            _buildSettings.SetHasToolbox(true);
         }
         else
         {
-            InventoryItem newItem = new InventoryItem(referenceData, amount);
-            inventory.Add(newItem);
-            _itemDictionary.Add(referenceData, newItem);
-            if (referenceData.type == "RESOURCE")
-            {
-                material = referenceData;
-            }
-            else
-            {
-                weapon = referenceData;
-                if (referenceData.displayName == "Hammer")
-                {
-                    _buildSettings.SetHasToolbox(true);
-                }
-                else
-                {
-                    _controller.canFire = true;
-                }
-            }
+            _controller.canFire = true;
         }
-        Debug.Log("Item added to player inventory");
+        Debug.Log($"Added {referenceData.displayName} to player inventory");
         OnInventoryChangedEvent?.Invoke();
     }
-    
-    public void Drop(InventoryItemData referenceData)
+
+    public void RemoveWeapon(InventoryItemData referenceData)
     {
-        if (_itemDictionary.TryGetValue(referenceData, out InventoryItem value))
-        {
-            int amount = referenceData.type == "RESOURCE" ? value.stackSize / 2 : 1;
-            value.RemoveFromStack(amount);
-            if (value.stackSize == 0)
-            {
-                inventory.Remove(value);
-                _itemDictionary.Remove(referenceData);
-                if (referenceData.type == "RESOURCE")
-                {
-                    material = null;
-                    _buildSettings.SetHasMaterials(false);
-                }
-                else
-                {
-                    weapon = null;
-                    _controller.canFire = false;
-                    _buildSettings.SetHasToolbox(false);
-                }
-            }
-        }
+        weapon = null;
+        _controller.canFire = false;
+        _buildSettings.SetHasToolbox(false);
+        itemDictionary.Remove(referenceData);
         Debug.Log($"Removed {referenceData.displayName} from player inventory");
         OnInventoryChangedEvent?.Invoke();
     }
@@ -94,7 +56,8 @@ public class InventorySystem : MonoBehaviour
     {
         Debug.Log($"Equipping {referenceData.displayName}");
         GameObject gunContainer = GameObject.Find("GunContainer");
-        var handheld = Instantiate(referenceData.prefab, gunContainer.transform.position, gunContainer.transform.rotation);
+        Quaternion rotation = referenceData.displayName == "Axe" ? referenceData.prefab.transform.rotation : gunContainer.transform.rotation;
+        var handheld = Instantiate(referenceData.prefab, gunContainer.transform.position, rotation);
         handheld.transform.SetParent(gunContainer.transform);
     }
 

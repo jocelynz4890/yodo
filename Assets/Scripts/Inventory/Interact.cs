@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -64,11 +60,8 @@ public class Interact : MonoBehaviour
         {
             case "Drop":
                 Debug.Log($"Attempting to drop {inventorySystem.weapon.displayName}");
-                inventorySystem.Drop(inventorySystem.weapon);
+                inventorySystem.RemoveWeapon(inventorySystem.weapon);
                 inventorySystem.Unequip();
-                break;
-            case "Split":
-                inventorySystem.Drop(inventorySystem.material);
                 break;
         }
     }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemObject : MonoBehaviour
@@ -8,7 +6,7 @@ public class ItemObject : MonoBehaviour
     
     public void OnHandlePickupItem(InventorySystem playerInventory)
     {
-        playerInventory.Add(referenceItem);
+        playerInventory.AddWeapon(referenceItem);
         playerInventory.Equip(referenceItem);
     }
 }

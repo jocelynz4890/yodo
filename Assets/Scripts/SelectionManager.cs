@@ -29,28 +29,6 @@ public class SelectionManager : MonoBehaviour
         {
             crosshair = GameObject.Find("Crosshair");
         }
-        // player = transform.parent.gameObject;
-
-        // playerGun = player.transform.Find("Gun")?.gameObject;
-        // playerAxe = player.transform.Find("axe")?.gameObject;
-
-        // // Then deactivate them back
-        // playerGun.SetActive(false);
-        // playerAxe.SetActive(false);
-
-        // _buildSettings = player.GetComponent<BuildingPlacement>();
-        // if (player == null)
-        // {
-        //     Debug.LogError("Player GameObject is NOT assigned!");
-        // }
-        // if (_buildSettings == null)
-        // {
-        //     Debug.LogError("BuildingPlacement component not found on the player GameObject!");
-        // }
-        // else
-        // {
-        //     Debug.Log("BuildingPlacement component successfully assigned.");
-        // }
     }
 
     void Update()
