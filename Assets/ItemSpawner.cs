@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
@@ -31,7 +29,8 @@ public class ItemSpawner : MonoBehaviour
                 Random.Range(center.z - areaSize.z / 2, center.z + areaSize.z / 2)
             );
             
-            var collectible = Instantiate(prefab, randomPosition, Quaternion.identity);
+            var collectible = Instantiate(prefab, randomPosition, prefab.transform.rotation);
+            collectible.transform.gameObject.tag = "CanPickUp";
             collectible.transform.GetChild(0).gameObject.tag = "CanPickUp";
         }
     }

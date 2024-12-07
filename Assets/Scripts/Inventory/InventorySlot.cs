@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +12,7 @@ public class InventorySlot : MonoBehaviour
     
     private InventorySystem _inventorySystem;
 
-    public void Set(InventoryItem item)
+    private void Set(InventoryItem item)
     {
         icon.sprite = item?.data.icon;
         label.text = item?.data.displayName ?? "";
@@ -22,7 +20,6 @@ public class InventorySlot : MonoBehaviour
 
     public void Awake()
     {
-        // Revise for materials slot
         icon = transform.Find("Icon").GetComponent<Image>();
         label = transform.Find("Label").GetComponent<TextMeshProUGUI>();
         
@@ -37,14 +34,11 @@ public class InventorySlot : MonoBehaviour
 
     private void OnUpdateInventory()
     {
-        if (_inventorySystem.inventory.Count > 0)
+        if (_inventorySystem.weapon != null)
         {
+            _inventorySystem.itemDictionary.TryGetValue(_inventorySystem.weapon, out var item);
             Debug.Log("Updating inventory slot");
-            foreach (var item in _inventorySystem.inventory)
-            {
-                // Revise for materials slot
-                Set(item);
-            }
+            Set(item);
         }
         else
         {
