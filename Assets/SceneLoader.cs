@@ -11,4 +11,12 @@ public class SceneLoader : MonoBehaviour
         // OR use scene index number:
         // SceneManager.LoadScene(1);
     }
+    public void LoadTitleScene()
+    {
+        Debug.Log("Loading Scene");
+        SceneManager.LoadScene("Title Screen");
+
+        // OR use scene index number:
+        // SceneManager.LoadScene(1);
+    }
 }
