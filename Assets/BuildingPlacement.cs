@@ -32,8 +32,10 @@ public class BuildingPlacement : MonoBehaviour
 
     [Header("Player Settings")]
     [SerializeField] private PlayerInput playerInput;  // Reference to Unity's PlayerInput component
-    [SerializeField] private string placeBuildingActionName = "Fire";   // Name of the action in your Input Action Asset
+    private PlayerController playerController;
     private Camera playerCamera;  // Camera specific to this player
+
+    private float placementCooldown = 0f;
 
     private void Awake()
     {
@@ -43,24 +45,21 @@ public class BuildingPlacement : MonoBehaviour
             playerCamera = Camera.main;  // Fallback to main camera if no specific camera is found
 
         SetupInputActions();
+
+        playerController = GetComponent<PlayerController>();
     }
 
     private void SetupInputActions()
     {
         // Assuming you're using the new Input System with PlayerInput component
         if (playerInput == null)
+        {
             playerInput = GetComponent<PlayerInput>();
-
-        // Subscribe to the place building action
-        playerInput.actions[placeBuildingActionName].performed += OnFirePerformed;
+        }
     }
 
     private void OnDestroy()
     {
-        if (playerInput != null)
-        {
-            playerInput.actions[placeBuildingActionName].performed -= OnFirePerformed;
-        }
         if (previewObject != null)
         {
             Destroy(previewObject);
@@ -69,9 +68,29 @@ public class BuildingPlacement : MonoBehaviour
     
     private void Update()
     {
-        if (showPlacementPreview && CanPlace())
+        if (placementCooldown > 0f)
+        {
+            placementCooldown -= Time.deltaTime;
+            if (previewObject != null)
+            {
+                previewObject.SetActive(false);
+            }
+        }
+
+        if (showPlacementPreview && CanPlace() && placementCooldown <= 0f)
         {
             UpdateBuildingPreview();
+        }
+
+        if (CanPlace() && playerController.fire && placementCooldown <= 0f)
+        {
+            Vector3 position;
+            Quaternion rotation;
+            if (GetPlacementPosition(out position, out rotation))
+            {
+                PlaceBuilding(position, rotation);
+                placementCooldown = 5f;
+            }
         }
     }
     
@@ -101,6 +120,7 @@ public class BuildingPlacement : MonoBehaviour
         }
     }
 
+
     private void SetPreviewMaterial(GameObject preview)
     {
         var renderers = preview.GetComponentsInChildren<Renderer>();
@@ -113,19 +133,6 @@ public class BuildingPlacement : MonoBehaviour
         foreach (var collider in colliders)
         {
             collider.enabled = false;
-        }
-    }
-
-    private void OnFirePerformed(InputAction.CallbackContext context)
-    {
-        if (CanPlace())
-        {
-            Vector3 position;
-            Quaternion rotation;
-            if (GetPlacementPosition(out position, out rotation))
-            {
-                PlaceBuilding(position, rotation);
-            }
         }
     }
     

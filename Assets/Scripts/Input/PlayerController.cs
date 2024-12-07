@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
     public bool isInteract = false;
     // variables for other scripts to control whether players can do certain things
     public bool canMove = true;
+    public bool canLook = true;
     public bool canFire = true;
+    public bool canInteract = true;
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityValue = -9.81f;
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
                 moveInput = canMove ? context.ReadValue<Vector2>() : Vector2.zero;
                 break;
             case "Look":
-                lookInput = context.ReadValue<Vector2>();
+                lookInput = canLook ? context.ReadValue<Vector2>() : Vector2.zero;
                 break;
             case "Jump":
                 if (!canMove) return;
@@ -91,7 +93,7 @@ public class PlayerController : MonoBehaviour
                 fire = canFire ? context.performed : false;
                 break;
             case "Interact":
-                isInteract = context.performed;
+                isInteract = canInteract ? context.performed : false;
                 break;
             default:
                 break;

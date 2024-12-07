@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class PineappleScript : MonoBehaviour
 {
-    [SerializeField] private float GameTimer = 0f;
-    [SerializeField] public bool IsPaused = false;
-    [SerializeField] public float SecPerPineappleGrowth = 10f;
-    [SerializeField] public float GrowthScale = 1f;
-    [SerializeField] public bool IsFullSize = false;
-    [SerializeField] public float FullSize = 5f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float SecUntilPineappleFinish = 120f;
+    public float SecForPineappleGrowth = 30f;
+    public bool IsPaused = false;
+    public float GrowthScale = 1f;
+    public bool IsFullSize = false;
+
+    private float growthTime = 0f;
 
     // Update is called once per frame
     void FixedUpdate()
     {
         if (!IsPaused)
         {
-            GameTimer += Time.fixedDeltaTime;
-            if (GameTimer >= SecPerPineappleGrowth && !IsFullSize)
+            growthTime += Time.fixedDeltaTime;
+            SecUntilPineappleFinish -= Time.fixedDeltaTime;
+
+            if (growthTime >= SecForPineappleGrowth)
             {
-                GameTimer = 0f;
-                transform.localScale += new Vector3(GrowthScale,GrowthScale,GrowthScale);
-                if (transform.localScale.x > FullSize)
-                {
-                    IsFullSize = true;
-                }
+                growthTime = 0f;
+                transform.localScale += new Vector3(GrowthScale, GrowthScale, GrowthScale);
+            }
+            
+            if (SecUntilPineappleFinish <= 0f)
+            {
+                IsFullSize = true;
             }
         }
     }
 }
+

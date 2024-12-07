@@ -67,15 +67,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Drop",
-                    "type": "Button",
-                    "id": "7e671479-d2e8-49ed-b232-9760442422b6",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -312,17 +303,6 @@
                 },
                 {
                     "name": "",
-                    "id": "7f6f8435-6b71-41e3-878c-5387b68b05b7",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "99debe02-ed45-4189-b6df-8d3be47d0cb5",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -406,17 +386,6 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1e378276-d8cb-4da9-882c-63ace07d38d1",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse;Gamepad",
-                    "action": "Drop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
