@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a5adab-6a80-40eb-bd33-a378728420ba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.yodo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.yodo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Axe_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Axe_Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Gun_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Gun_Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Hammer_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Hammer_Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Knife_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Knife_Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_M4_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_M4_Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_MP7_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_MP7_Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pineapple_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pineapple_Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pistol_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pistol_Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Title Screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Title Screen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/IconGenerator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/IconGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,19 +33,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Editor/FolderPreset.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/Interact.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventoryItemData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySlot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySlot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySlot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/ItemObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/SelectionManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scenes/Title Screen.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scenes/Title Screen.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.editorcoroutines@1.0.0/Editor/EditorCoroutineUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.editorcoroutines@1.0.0/Editor/EditorWaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.editorcoroutines@1.0.0/Editor/EditorWindowCoroutineExtension.cs" root0="SKIP_HIGHLIGHTING" />
@@ -58,19 +60,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "awhipp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;awhipp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.48f1/Unity.app/Contents/MacOS/Unity" />
@@ -124,7 +126,9 @@
       <workItem from="1732638610007" duration="28414000" />
       <workItem from="1733179350028" duration="13675000" />
       <workItem from="1733363902645" duration="23898000" />
-      <workItem from="1733524259248" duration="19313000" />
+      <workItem from="1733524259248" duration="22302000" />
+      <workItem from="1733593299350" duration="5000" />
+      <workItem from="1733594680313" duration="4494000" />
     </task>
     <servers />
   </component>
