@@ -56,13 +56,13 @@ public class Interact : MonoBehaviour
     
     void OnAction(InputAction.CallbackContext context)
     {
-        switch (context.action.name)
-        {
-            case "Drop":
-                Debug.Log($"Attempting to drop {inventorySystem.weapon.displayName}");
-                inventorySystem.RemoveWeapon(inventorySystem.weapon);
-                inventorySystem.Unequip();
-                break;
-        }
+        // switch (context.action.name)
+        // {
+        //     case "Drop":
+        //         Debug.Log($"Attempting to drop {inventorySystem.weapon.displayName}");
+        //         inventorySystem.RemoveWeapon(inventorySystem.weapon);
+        //         inventorySystem.Unequip();
+        //         break;
+        // }
     }
 }
