@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 458460}
   - component: {fileID: -4200888717877742681}
   - component: {fileID: 95905096417158833}
+  - component: {fileID: -2881891024572703585}
   m_Layer: 0
   m_Name: PlacedWallWood
   m_TagString: Untagged
@@ -400,6 +401,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: Wall
+  player1InRange: 0
+  player2InRange: 0
+  amount: 0
+--- !u!114 &-2881891024572703585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0aca3a2f6e656c479f9e678e677cdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 3
 --- !u!1 &159440
 GameObject:
   m_ObjectHideFlags: 0
