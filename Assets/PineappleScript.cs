@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PineappleScript : MonoBehaviour
@@ -9,10 +7,16 @@ public class PineappleScript : MonoBehaviour
     public bool IsPaused = false;
     public float GrowthScale = 1f;
     public bool IsFullSize = false;
-
+    
     private float growthTime = 0f;
+    private SceneLoader _sceneLoader;
 
-    // Update is called once per frame
+    void Start()
+    {
+        SecUntilPineappleFinish = 120f;
+        _sceneLoader = GameObject.Find("Players").GetComponent<SceneLoader>();
+    }
+    
     void FixedUpdate()
     {
         if (!IsPaused)
@@ -29,6 +33,7 @@ public class PineappleScript : MonoBehaviour
             if (SecUntilPineappleFinish <= 0f)
             {
                 IsFullSize = true;
+                _sceneLoader.LoadWinScene();
             }
         }
     }

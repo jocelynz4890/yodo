@@ -6,18 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f0a5adab-6a80-40eb-bd33-a378728420ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.yodo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.yodo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Axe_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Axe_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Gun_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Gun_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Hammer_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Hammer_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Knife_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Knife_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_M4_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_M4_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_MP7_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_MP7_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pineapple_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pineapple_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pistol_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pistol_Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Controls/PlayerInputActionAsset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Controls/PlayerInputActionAsset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Controls/PlayerInputActionAsset.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Controls/PlayerInputActionAsset.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PineappleScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PineappleScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Title Screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Title Screen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/IconGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/IconGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Health/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Health/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,9 +31,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Controls/PlayerInputActionAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/FolderPreset.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/SceneLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scenes/Title Screen.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scenes/Title Screen.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scenes/Title Screen.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Health/Health.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Scripts/Inventory/InventorySystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/Assets/Timer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.editorcoroutines@1.0.0/Editor/EditorCoroutineUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.editorcoroutines@1.0.0/Editor/EditorWaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.editorcoroutines@1.0.0/Editor/EditorWindowCoroutineExtension.cs" root0="SKIP_HIGHLIGHTING" />
@@ -48,7 +53,12 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/ComparisonTable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/ProfileAnalysis.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/ProfileAnalyzerShader.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/GraphicRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/InputField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasSizeCorrectInAwakeAndStart.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/whipple/7th_sem/6.4570/P3/yodo/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
