@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump",
+                    "name": "Restart",
                     "type": "Button",
                     "id": "ae90c87f-43ac-4eff-af7e-593495538069",
                     "expectedControlType": "",
@@ -308,7 +308,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Jump",
+                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -319,7 +319,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Jump",
+                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

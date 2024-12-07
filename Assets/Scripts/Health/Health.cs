@@ -12,6 +12,7 @@ public class Health : MonoBehaviour {
     private Slider playerHealthBar;
     private MeshRenderer zombieHealthBar;
     private float zombieMaxScale;
+    private PlayerManager _playerManager;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Health : MonoBehaviour {
         healthText = transform.Find("Canvas/Health/HealthText")?.GetComponent<TextMeshProUGUI>();
         playerHealthBar = transform.Find("Canvas/Health/HealthBar")?.GetComponent<Slider>();
         zombieHealthBar = transform.Find("HealthBar/Active")?.GetComponent<MeshRenderer>();
+        _playerManager = GetComponentInParent<PlayerManager>();
 
         if (playerHealthBar != null)
         {
@@ -49,6 +51,7 @@ public class Health : MonoBehaviour {
                 gameObject.GetComponent<PlayerController>().enabled = false;
                 gameObject.GetComponent<PlayerController>().ResetInputs();
                 text.text = "Wait for revive.";
+                _playerManager.alivePlayers--;
             }
             else
             {
@@ -66,6 +69,7 @@ public class Health : MonoBehaviour {
             {
                 gameObject.GetComponent<PlayerController>().enabled = true;
                 text.text = "";
+                _playerManager.alivePlayers++;
             }
         }
 

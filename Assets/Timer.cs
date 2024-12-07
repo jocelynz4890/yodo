@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -7,31 +5,29 @@ public class Timer : MonoBehaviour
 {
     public GameObject pineappleScript;
 
-    private PlayerController playerController;
-    private Health playerHealth;
-
-    // Start is called before the first frame update
+    private PlayerController _playerController;
+    private Health _playerHealth;
+    
     void Start()
     {
-        playerController = transform.parent.parent.GetComponent<PlayerController>();
-        playerHealth = transform.parent.parent.GetComponent<Health>();
+        _playerController = GetComponentInParent<PlayerController>();
+        _playerHealth = GetComponentInParent<Health>();
         GetComponent<TextMeshProUGUI>().text = "Time left: " + pineappleScript.GetComponent<PineappleScript>().SecUntilPineappleFinish.ToString("F1");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (playerHealth.currentHealth <= 0)
+        if (_playerHealth.currentHealth <= 0)
         {
-            GetComponent<TextMeshProUGUI>().text = "You Lose!";
+            GetComponent<TextMeshProUGUI>().text = "You are dead!";
         }
         else if (pineappleScript.GetComponent<PineappleScript>().SecUntilPineappleFinish <= 0f)
         {
             GetComponent<TextMeshProUGUI>().text = "You Win!";
-            playerController.canMove = false;
-            playerController.canLook = false;
-            playerController.canFire = false;
-            playerController.canInteract = false;
+            _playerController.canMove = false;
+            _playerController.canLook = false;
+            _playerController.canFire = false;
+            _playerController.canInteract = false;
         }
         else
         {

@@ -708,8 +708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f,
-    type: 3}
+  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1384,24 +1383,27 @@ MonoBehaviour:
 
     Move: WASD
 
-    Look: Mouse
+    Look:
+    Mouse
 
     Build/Shoot: Left Click
 
     Pause: Escape
 
-    Gather: P
+    Revive: E
 
 
-    Controls (Controller)
+    Controls
+    (Controller)
 
     Move: Left Stick
 
     Look: Right Stick
 
-    Build/Shoot: Right Trigger
+    Build/Shoot: Right
+    Trigger
 
-    Gather: B'
+    Revive: X'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1618,32 +1620,38 @@ MonoBehaviour:
 
     Jocelyn Zheng
 
-    Zee Prewitt
+    Zee
+    Prewitt
 
 
     Assets:
 
     Violet Theme UI (Giniel Villacote)
 
-    Stylized Potted Plants (SandoraKa)
+    Stylized Potted
+    Plants (SandoraKa)
 
     Low-Lying Plant Pack (Jonathan Foust)
 
-    Fruits LowPoly Pack Lite (ResilientLogic)
+    Fruits LowPoly
+    Pack Lite (ResilientLogic)
 
     Zombie (Pxltiger)
 
-    Industrial Props Kit (Universal Assets)
+    Industrial Props Kit (Universal
+    Assets)
 
     Axe (RRFreelance)
 
     Flooded Grounds (Sandro T)
 
-    Abandoned Buildings (Aleksey Kozhemyakin)
+    Abandoned
+    Buildings (Aleksey Kozhemyakin)
 
     Woman with cap and jacket (Agarkova_CG)
 
-    Beard man in jeans and shirt (Agarkova_CG)'
+    Beard
+    man in jeans and shirt (Agarkova_CG)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1779,8 +1787,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f,
-    type: 3}
+  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2193,8 +2200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f,
-    type: 3}
+  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2421,8 +2427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f,
-    type: 3}
+  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2667,8 +2672,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f,
-    type: 3}
+  m_Sprite: {fileID: -2047613651344142497, guid: e869268efd7d38745a52967381cef55f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

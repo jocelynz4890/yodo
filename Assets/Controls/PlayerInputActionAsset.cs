@@ -55,7 +55,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Jump"",
+                    ""name"": ""Restart"",
                     ""type"": ""Button"",
                     ""id"": ""ae90c87f-43ac-4eff-af7e-593495538069"",
                     ""expectedControlType"": """",
@@ -330,7 +330,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Jump"",
+                    ""action"": ""Restart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -341,7 +341,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Jump"",
+                    ""action"": ""Restart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1020,7 +1020,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_Restart = m_Player.FindAction("Restart", throwIfNotFound: true);
         m_Player_LookLeft = m_Player.FindAction("LookLeft", throwIfNotFound: true);
         m_Player_LookRight = m_Player.FindAction("LookRight", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
@@ -1106,7 +1106,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
-    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_Restart;
     private readonly InputAction m_Player_LookLeft;
     private readonly InputAction m_Player_LookRight;
     private readonly InputAction m_Player_Interact;
@@ -1117,7 +1117,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
-        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @Restart => m_Wrapper.m_Player_Restart;
         public InputAction @LookLeft => m_Wrapper.m_Player_LookLeft;
         public InputAction @LookRight => m_Wrapper.m_Player_LookRight;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
@@ -1139,9 +1139,9 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
             @Fire.started += instance.OnFire;
             @Fire.performed += instance.OnFire;
             @Fire.canceled += instance.OnFire;
-            @Jump.started += instance.OnJump;
-            @Jump.performed += instance.OnJump;
-            @Jump.canceled += instance.OnJump;
+            @Restart.started += instance.OnRestart;
+            @Restart.performed += instance.OnRestart;
+            @Restart.canceled += instance.OnRestart;
             @LookLeft.started += instance.OnLookLeft;
             @LookLeft.performed += instance.OnLookLeft;
             @LookLeft.canceled += instance.OnLookLeft;
@@ -1164,9 +1164,9 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
             @Fire.started -= instance.OnFire;
             @Fire.performed -= instance.OnFire;
             @Fire.canceled -= instance.OnFire;
-            @Jump.started -= instance.OnJump;
-            @Jump.performed -= instance.OnJump;
-            @Jump.canceled -= instance.OnJump;
+            @Restart.started -= instance.OnRestart;
+            @Restart.performed -= instance.OnRestart;
+            @Restart.canceled -= instance.OnRestart;
             @LookLeft.started -= instance.OnLookLeft;
             @LookLeft.performed -= instance.OnLookLeft;
             @LookLeft.canceled -= instance.OnLookLeft;
@@ -1379,7 +1379,7 @@ public partial class @PlayerInputActionAsset: IInputActionCollection2, IDisposab
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
         void OnLookLeft(InputAction.CallbackContext context);
         void OnLookRight(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);

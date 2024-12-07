@@ -11,13 +11,16 @@ public class InventorySystem : MonoBehaviour
     public InventoryItemData weapon { get; private set; }
     
     public static event Action OnInventoryChangedEvent;
-    
+
     private void Awake()
     {
         _controller = GetComponent<PlayerController>();
         _buildSettings = GetComponent<BuildingPlacement>();
         itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
-        
+    }
+
+    private void Start()
+    {
         ItemObject item = GetComponentInChildren<ItemObject>();
         AddWeapon(item.referenceItem);
     }
