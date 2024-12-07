@@ -19,7 +19,6 @@ public class InventorySystem : MonoBehaviour
         itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
         
         ItemObject item = GetComponentInChildren<ItemObject>();
-        Debug.Log($"Weapon: {item.referenceItem.displayName}");
         AddWeapon(item.referenceItem);
     }
 
@@ -42,7 +41,6 @@ public class InventorySystem : MonoBehaviour
         {
             _controller.canFire = true;
         }
-        Debug.Log($"Added {referenceData.displayName} to player inventory");
         OnInventoryChangedEvent?.Invoke();
     }
 
@@ -52,13 +50,11 @@ public class InventorySystem : MonoBehaviour
         _controller.canFire = false;
         _buildSettings.SetHasToolbox(false);
         itemDictionary.Remove(referenceData);
-        Debug.Log($"Removed {referenceData.displayName} from player inventory");
         OnInventoryChangedEvent?.Invoke();
     }
     
     public void Equip(InventoryItemData referenceData)
     {
-        Debug.Log($"Equipping {referenceData.displayName}");
         GameObject gunContainer = GameObject.Find("GunContainer");
         Quaternion rotation = referenceData.displayName == "Axe" ? referenceData.prefab.transform.rotation : gunContainer.transform.rotation;
         var handheld = Instantiate(referenceData.prefab, gunContainer.transform.position, rotation);
@@ -69,7 +65,6 @@ public class InventorySystem : MonoBehaviour
     {
         GameObject gunContainer = GetComponentInChildren<GunContainer>().gameObject;
         var handheld = gunContainer.transform.GetChild(0);
-        Debug.Log($"Unequipping {handheld.name}");
         gunContainer.transform.DetachChildren();
         handheld.tag = "CanPickUp";
     }

@@ -19,12 +19,10 @@ public class ResourceManager : MonoBehaviour
         if (resourceType.ToLower() == "tree")
         {
             woodCount += amount;
-            Debug.Log($"Added {amount} wood. New count: {woodCount}");
         }
         else if (resourceType.ToLower() == "rock")
         {
             stoneCount += amount;
-            Debug.Log($"Added {amount} stone. New count: {stoneCount}");
         }
         else
         {

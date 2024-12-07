@@ -5,7 +5,6 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadMainScene()
     {
-        Debug.Log("Loading Scene");
         SceneManager.LoadScene("Main Scene");
 
         // OR use scene index number:
@@ -13,7 +12,6 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadTitleScene()
     {
-        Debug.Log("Loading Scene");
         SceneManager.LoadScene("Title Screen");
 
         // OR use scene index number:

@@ -73,10 +73,6 @@ public class BuildingPlacement : MonoBehaviour
         {
             UpdateBuildingPreview();
         }
-        if (!hasToolbox)
-        {
-                previewObject.SetActive(false);
-        }
     }
     
     private void UpdateBuildingPreview()
@@ -192,10 +188,6 @@ public class BuildingPlacement : MonoBehaviour
                     highestPoint = hits[i].point.y;
                     foundPlaceable = true;
                 }
-            }
-            else
-            {
-                Debug.Log("Non-placable Terrain");
             }
         }
 

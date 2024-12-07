@@ -37,12 +37,10 @@ public class InventorySlot : MonoBehaviour
         if (_inventorySystem.weapon != null)
         {
             _inventorySystem.itemDictionary.TryGetValue(_inventorySystem.weapon, out var item);
-            Debug.Log("Updating inventory slot");
             Set(item);
         }
         else
         {
-            Debug.Log("Clearing inventory slot");
             Set(null);
         }
     }

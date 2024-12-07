@@ -44,7 +44,6 @@ public class Interact : MonoBehaviour
     {
         if (other.gameObject.CompareTag("CanPickUp"))
         {
-            Debug.Log("Collided with collectible item");
             ItemObject item = other.GetComponent<ItemObject>();
             if (item != null && inventorySystem.weapon == null)
             {

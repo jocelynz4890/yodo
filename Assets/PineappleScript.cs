@@ -22,12 +22,10 @@ public class PineappleScript : MonoBehaviour
         if (!IsPaused)
         {
             GameTimer += Time.fixedDeltaTime;
-            Debug.Log("FullSize:" + IsFullSize);
             if (GameTimer >= SecPerPineappleGrowth && !IsFullSize)
             {
                 GameTimer = 0f;
                 transform.localScale += new Vector3(GrowthScale,GrowthScale,GrowthScale);
-                Debug.Log("Pineapple Grown");
                 if (transform.localScale.x > FullSize)
                 {
                     IsFullSize = true;

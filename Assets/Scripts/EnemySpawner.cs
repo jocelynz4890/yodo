@@ -39,7 +39,6 @@ public class EnemySpawner : MonoBehaviour
                     SpawnZombie(WeakZombiePrefab);
                 }
                 GameTimer = 0f;
-                Debug.Log("Zombie Spawned, Timer Reset");
             }
         }
     }

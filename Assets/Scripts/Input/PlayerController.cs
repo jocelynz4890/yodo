@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float jumpHeight = 1.0f;
-    [SerializeField] private float rotationSpeed = 40f;
-    [SerializeField] private float lookSpeedY = 0.05f; // Add a look speed for vertical movement
+    [SerializeField] private float rotationSpeed = 0.1f;
+    [SerializeField] private float lookSpeedY = 0.1f; // Add a look speed for vertical movement
 
     private PlayerInput playerInput;
     private Vector2 moveInput;
@@ -94,7 +94,6 @@ public class PlayerController : MonoBehaviour
                 isInteract = context.performed;
                 break;
             default:
-                // Debug.Log("Unknown action: " + context.action.name);
                 break;
         }
     }

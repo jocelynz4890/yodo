@@ -39,15 +39,11 @@ public class SelectionManager : MonoBehaviour
         {
             playerGun.SetActive(false);
             playerAxe.SetActive(true);
-
-            Debug.Log("Picking up axe");
         }
         else
         {
             playerGun.SetActive(true);
             playerAxe.SetActive(false);
-
-            Debug.Log("Picking up gun");
         }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -56,31 +52,8 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             var selectionTransform = hit.transform;
-
-            // Check if the hit object has the InteractableObjectName component
-            var interactableObject = selectionTransform.GetComponent<InteractableObjectName>();
-            if (interactableObject && ((isPlayer1 && interactableObject.player1InRange) || (!isPlayer1 && interactableObject.player2InRange)) )
-            {
-                onTarget = true;
-                // Update the interaction text
-                interaction_text.text = interactableObject.GetItemName();
-
-                // Change the crosshair color based on the interaction
-                if (interaction_text.text == "Zombie")
-                {
-                    crosshair.GetComponent<Image>().color = Color.red; // Set crosshair to red
-                }
-                else
-                {
-                    SelectionText.SetActive(true); // Make the text visible
-                    crosshair.GetComponent<Image>().color = Color.white; // Reset crosshair to white
-                }
-            }
-            else
-            {
-                onTarget = false;
-                ResetUI(); // Reset the UI when no interactable object is found
-            }
+            onTarget = false;
+            ResetUI(); // Reset the UI when no interactable object is found
         }
         else
         {

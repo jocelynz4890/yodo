@@ -79,7 +79,6 @@ public class SimplePathfinding : MonoBehaviour
         }
         else
         {
-            Debug.Log("No Players Exist, cannot pathfind.");
             return;
         }
 
@@ -97,12 +96,10 @@ public class SimplePathfinding : MonoBehaviour
         if (desiredPosition != currentPos)
         {
             animator.SetBool("IsWalking", true);
-            Debug.Log("IsWalking set to true.");
         }
         else
         {
             animator.SetBool("IsWalking", false);
-            Debug.Log("IsWalking set to false.");
         }
 
         // Attack logic with null checks
