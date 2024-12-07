@@ -17,6 +17,10 @@ public class InventorySystem : MonoBehaviour
         _controller = GetComponent<PlayerController>();
         _buildSettings = GetComponent<BuildingPlacement>();
         itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
+        
+        ItemObject item = GetComponentInChildren<ItemObject>();
+        Debug.Log($"Weapon: {item.referenceItem.displayName}");
+        AddWeapon(item.referenceItem);
     }
 
     public InventoryItem Get(InventoryItemData referenceData)
@@ -67,6 +71,6 @@ public class InventorySystem : MonoBehaviour
         var handheld = gunContainer.transform.GetChild(0);
         Debug.Log($"Unequipping {handheld.name}");
         gunContainer.transform.DetachChildren();
-        // handheld.tag = "CanPickUp";
+        handheld.tag = "CanPickUp";
     }
 }

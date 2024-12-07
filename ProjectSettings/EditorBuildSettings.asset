@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Jocelyn Scene.unity
     guid: 56e021b1944df134cb1a3d6b1dcb9fb7
   - enabled: 1
