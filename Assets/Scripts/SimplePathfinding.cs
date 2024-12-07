@@ -108,6 +108,8 @@ public class SimplePathfinding : MonoBehaviour
         // Attack logic with null checks
         if (Time.time > nextAttackTime)
         {
+            // Check if any of the players are within attack range
+            bool hasAttackedPlayer = false;
             if (P1Object && P1Distance <= attackRange)
             {
                 animator.SetTrigger("Attack");
@@ -116,9 +118,10 @@ public class SimplePathfinding : MonoBehaviour
                 {
                     health.Damage(1);
                     nextAttackTime = Time.time + attackCooldown;
+                    hasAttackedPlayer = true;
                 }
             }
-            if (P2Object && P2Distance <= attackRange)
+            if (P2Object && P2Distance <= attackRange && !hasAttackedPlayer)
             {
                 animator.SetTrigger("Attack");
                 var health = P2Object.GetComponent<Health>();
@@ -126,8 +129,29 @@ public class SimplePathfinding : MonoBehaviour
                 {
                     health.Damage(1);
                     nextAttackTime = Time.time + attackCooldown;
+                    hasAttackedPlayer = true;
                 }
             }
+
+            // Search for objects with health component and damage them if within attack range
+            if (!hasAttackedPlayer)
+            {
+                Collider[] colliders = Physics.OverlapSphere(currentPos, attackRange);
+                foreach (var collider in colliders)
+                {
+                    var health = collider.GetComponent<Health>();
+                    var simplePathfinding = collider.GetComponent<SimplePathfinding>();
+                    if (health != null && simplePathfinding == null && !collider.gameObject.Equals(P1Object) && !collider.gameObject.Equals(P2Object))
+                    {
+                        animator.SetTrigger("Attack");
+                        health.Damage(1);
+                        nextAttackTime = Time.time + attackCooldown;
+                        break;
+                    }
+                }
+            }
+
         }
     }
 }
+
