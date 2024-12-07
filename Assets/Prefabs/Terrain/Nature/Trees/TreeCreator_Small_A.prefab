@@ -134,7 +134,7 @@ MonoBehaviour:
   ItemName: Tree
   player1InRange: 0
   player2InRange: 0
-  amount: 0
+  amount: 7
 --- !u!65 &1665776266795032698
 BoxCollider:
   m_ObjectHideFlags: 0

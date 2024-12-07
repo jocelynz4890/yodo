@@ -263,4 +263,9 @@ public class BuildingPlacement : MonoBehaviour
     {
         hasMaterials = value;
     }
+
+    public bool getHasToolbox()
+    {
+        return hasToolbox;
+    }
 }

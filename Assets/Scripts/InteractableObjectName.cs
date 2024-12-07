@@ -12,67 +12,82 @@ public class InteractableObjectName : MonoBehaviour
     GameObject player1;
     GameObject player2;
 
-    GameObject player1Gun;
-    GameObject player1Axe;
+    private bool player1Gun;
+    private bool player1Axe;
 
-    GameObject player2Gun;
-    GameObject player2Axe;
+    private bool player2Gun;
+    private bool player2Axe;
 
-    public int amount;
+    private ResourceManager player1ResourceManager;
+    private ResourceManager player2ResourceManager;
+
+    private SelectionManager selectionManager1;
+    private SelectionManager selectionManager2;
+
+    public int amount = 5;
 
     private void Start()
     {
         player1 = GameObject.Find("Player 1");
         player2 = GameObject.Find("Player 2");
+
+        // Find each player's ResourceManager
+        player1ResourceManager = player1.GetComponent<ResourceManager>();
+        player2ResourceManager = player2.GetComponent<ResourceManager>();
+
+        // player1Gun = player1.GetComponent<SelectionManager>().playerGun.activeSelf;
+        selectionManager1 = player1.GetComponent<SelectionManager>();
+        player1Gun = selectionManager1.playerGun.activeSelf;
+        player1Axe = selectionManager1.playerAxe.activeSelf;
+        // player1Axe = player1.GetComponent<SelectionManager>().playerAxe.activeSelf;
+
+        // player2Gun = player2.GetComponent<SelectionManager>().playerGun.activeSelf;
+        // player2Axe = player2.GetComponent<SelectionManager>().playerAxe.activeSelf;
+        selectionManager2 = player2.GetComponent<SelectionManager>();
+        player2Gun = selectionManager2.playerGun.activeSelf;
+        player2Axe = selectionManager2.playerAxe.activeSelf;
     }
  
     public string GetItemName()
     {
-        return ItemName;
+        return this.ItemName;
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && player1InRange)
+        // Update status of tools
+        player1Gun = selectionManager1.playerGun.activeSelf;
+        player1Axe = selectionManager1.playerAxe.activeSelf;
+        player2Gun = selectionManager2.playerGun.activeSelf;
+        player2Axe = selectionManager2.playerAxe.activeSelf;
+
+        if(Input.GetKeyDown(KeyCode.P) && player1InRange && player1Axe)
         {
             Debug.Log("Item added to player 1 inventory");
             // add amount to player's inventory based on ItemName and player in range
-            if(ItemName == "Tree") // also check if player is in axe mode
+            if(this.ItemName == "Tree") 
             {
-
+                player1ResourceManager.AddResource("Tree", this.amount);
             }
-            else if(ItemName == "Rock") // also check if player is in axe mode
+            else if(this.ItemName == "Rock") 
             {
-
-            }
-            else if(ItemName == "Axe")
-            {
-                if (player1 != null)
-                {
-                    player1Gun = player1.transform.Find("Gun").gameObject;
-                    player1Axe = player1.transform.Find("axe").gameObject;
-                }
-
-                player1Gun.SetActive(false);
-                player1Axe.SetActive(true);
-
-                Debug.Log("Picking up axe");
-            }
-            else if(ItemName == "Gun")
-            {
-                if (player1 != null)
-                {
-                    player1Gun = player1.transform.Find("Gun").gameObject;
-                    player1Axe = player1.transform.Find("axe").gameObject;
-                }
-
-                player1Gun.SetActive(true);
-                player1Axe.SetActive(false);
-
-                Debug.Log("Picking up gun");
+                player1ResourceManager.AddResource("Rock", this.amount);
             }
         }
-        // copy for player 2
+        if(Input.GetKeyDown(KeyCode.P) && player2InRange && player2Axe)
+        {
+            Debug.Log("Item added to player 2 inventory");
+            player2ResourceManager.AddResource("Tree", this.amount);
+            // add amount to player's inventory based on ItemName and player in range
+            if(this.ItemName == "Tree") // also check if player is in axe mode
+            {
+                player2ResourceManager.AddResource("Tree", this.amount);
+            }
+            else if(this.ItemName == "Rock") // also check if player is in axe mode
+            {
+                player2ResourceManager.AddResource("Rock", this.amount);
+            }
+        }
     }
 
     // ONLY DETECTS 1 PLAYER AT A TIME

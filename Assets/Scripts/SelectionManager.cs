@@ -12,6 +12,12 @@ public class SelectionManager : MonoBehaviour
     private TextMeshProUGUI interaction_text;
     public bool onTarget; // track to make sure cursor is on object, not its collider
     public bool isPlayer1;
+    public GameObject player;
+
+    public GameObject playerGun;
+    public GameObject playerAxe;
+
+    public BuildingPlacement _buildSettings;
 
     private void Start()
     {
@@ -23,10 +29,49 @@ public class SelectionManager : MonoBehaviour
         {
             crosshair = GameObject.Find("Crosshair");
         }
+        // player = transform.parent.gameObject;
+
+        // playerGun = player.transform.Find("Gun")?.gameObject;
+        // playerAxe = player.transform.Find("axe")?.gameObject;
+
+        // // Then deactivate them back
+        // playerGun.SetActive(false);
+        // playerAxe.SetActive(false);
+
+        // _buildSettings = player.GetComponent<BuildingPlacement>();
+        // if (player == null)
+        // {
+        //     Debug.LogError("Player GameObject is NOT assigned!");
+        // }
+        // if (_buildSettings == null)
+        // {
+        //     Debug.LogError("BuildingPlacement component not found on the player GameObject!");
+        // }
+        // else
+        // {
+        //     Debug.Log("BuildingPlacement component successfully assigned.");
+        // }
     }
 
     void Update()
     {
+        // handle item update
+
+        if(_buildSettings.getHasToolbox())
+        {
+            playerGun.SetActive(false);
+            playerAxe.SetActive(true);
+
+            Debug.Log("Picking up axe");
+        }
+        else
+        {
+            playerGun.SetActive(true);
+            playerAxe.SetActive(false);
+
+            Debug.Log("Picking up gun");
+        }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
