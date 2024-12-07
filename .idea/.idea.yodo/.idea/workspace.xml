@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0a5adab-6a80-40eb-bd33-a378728420ba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.yodo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.yodo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Axe_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Axe_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Gun_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Gun_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Hammer_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Hammer_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Knife_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Knife_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_M4_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_M4_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_MP7_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_MP7_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pineapple_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pineapple_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pistol_Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Collectibles/Icons/InventoryItem_Pistol_Icon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SquarePlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SquarePlayer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +124,7 @@
       <workItem from="1732638610007" duration="28414000" />
       <workItem from="1733179350028" duration="13675000" />
       <workItem from="1733363902645" duration="23898000" />
-      <workItem from="1733524259248" duration="18690000" />
+      <workItem from="1733524259248" duration="19313000" />
     </task>
     <servers />
   </component>
